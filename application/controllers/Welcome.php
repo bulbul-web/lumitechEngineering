@@ -20,6 +20,52 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view('welcome_message');
+		$data = array();
+		$data['title'] = 'Home';
+		$data['header'] = $this->load->view("frontend/header", $data, true);
+		$data['main'] = $this->load->view("frontend/main", $data, true);
+		$data['footer'] = $this->load->view("frontend/footer", $data, true);
+		$this->load->view('indexHome', $data);
 	}
+	
+	public function products()
+	{
+		$data = array();
+		$data['title'] = 'Products List';
+		$data['header'] = $this->load->view("frontend/header", $data, true);
+		$data['main'] = $this->load->view("frontend/products", $data, true);
+		$data['footer'] = $this->load->view("frontend/footer", $data, true);
+		$this->load->view('indexHome', $data);
+	}
+	
+	public function about()
+	{
+		$data = array();
+		$data['title'] = 'About';
+		$data['header'] = $this->load->view("frontend/header", $data, true);
+		$data['main'] = $this->load->view("frontend/about", $data, true);
+		$data['footer'] = $this->load->view("frontend/footer", $data, true);
+		$this->load->view('indexHome', $data);
+	}
+	
+	public function gallery()
+	{
+		$data = array();
+		$data['title'] = 'Gallery';
+		$data['header'] = $this->load->view("frontend/header", $data, true);
+		$data['main'] = $this->load->view("frontend/gallery", $data, true);
+		$data['footer'] = $this->load->view("frontend/footer", $data, true);
+		$this->load->view('indexHome', $data);
+	}
+	
+	public function contact()
+	{
+		$data = array();
+		$data['title'] = 'Contact';
+		$data['header'] = $this->load->view("frontend/header", $data, true);
+		$data['main'] = $this->load->view("frontend/contact", $data, true);
+		$data['footer'] = $this->load->view("frontend/footer", $data, true);
+		$this->load->view('indexHome', $data);
+	}
+
 }

@@ -50,5 +50,23 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |		my-controller/my-method	-> my_controller/my_method
 */
 $route['default_controller'] = 'welcome';
+$route['products'] = 'welcome/products';
+$route['about'] = 'welcome/about';
+$route['gallery'] = 'welcome/gallery';
+$route['contact'] = 'welcome/contact';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
+
+$route['login'] = 'login';
+$route['signup'] = 'login/signup';
+$route['login-check'] = 'users/login_check';
+$route['logout'] = 'users/logout';
+
+$route['slider'] = 'dashboard/slider';
+$route['slider-add'] = 'dashboard/slider_add_form';
+$route['slider-save'] = 'dashboard/slider_save';
+$route['delete-status-slider/(:any)'] = 'dashboard/delete_status_slider/$1';
+$route['edit-slider/(:any)'] = 'dashboard/edit_slider_form/$1';
+$route['slider-update'] = 'dashboard/slider_update';
+
+$route['company-info/(:any)'] = 'companyInfo/company_info/$1';
