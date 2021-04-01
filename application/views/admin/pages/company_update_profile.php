@@ -14,10 +14,8 @@
        
 	   <div class="col-sm-3">
             <div class="btn-group float-sm-right">
-                <!-- <a href="<?php echo base_url();?>product-purchese-list" class="btn btn-outline-primary waves-effect waves-light"> Product List</a> -->
-                <a href="<?php echo base_url();?>edit-slider/<?php echo $sliderListSingle->id;?>" class="btn btn-outline-primary waves-effect waves-light" >  Refresh </a>
-                <a href="<?php echo base_url();?>slider" class="btn btn-outline-primary waves-effect waves-light" >  Back </a>
-            
+               
+            <a href="<?php echo base_url();?>company-info/1" class="btn btn-outline-primary waves-effect waves-light" >  Refresh </a>
             </div>
         </div>
 
@@ -40,45 +38,65 @@
 					?>
 				</div>
 			 
-             <form name="slider-update" id="sliderUpdate" action="<?php echo base_url();?>slider-update" method="post" enctype="multipart/form-data">
+             <form name="company-update" id="companyUpdate" action="<?php echo base_url();?>company-update" method="post" enctype="multipart/form-data">
                     
                     <div class="row">
                         <div class="col-md-12">
                             
                             <div class="form-group">
-                                <label for="email">Title:</label>
-                                <input type="text" name="title" class="form-control" value="<?php echo $sliderListSingle->title; ?>" >
-                                <input type="hidden" name="id" class="form-control" value="<?php echo $sliderListSingle->id; ?>" >
-                                <?php echo form_error('title', '<div class="error">', '</div>'); ?>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="email">Description:</label>
-                                <input type="text" name="description" class="form-control" value="<?php echo $sliderListSingle->description; ?>" >
-                                <?php echo form_error('description', '<div class="error">', '</div>'); ?>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="email">Slider Image:</label>
-                                <input type="file" name="slider_img" class="form-control" value="" >
-                                <input type="hidden" name="old_slider_img" class="form-control" value="<?php echo $sliderListSingle->slider_img;?>" >
-                                <?php echo form_error('slider_img', '<div class="error">', '</div>'); ?>
-                                <span class="alert alert-danger text-center">Image size will be (1300 x 468)</span><br/>
-                                <img src="<?php echo base_url().$sliderListSingle->slider_img;?>" style="height: 50px;" />
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="email">Order By</label>
-                                <input type="number" name="order_by" class="form-control" value="<?php echo $sliderListSingle->order_by; ?>" >
+                                <label for="email">Mobile 1:</label>
+                                <input type="text" name="mobile_1" class="form-control" value="<?php echo $companyInfoSingle->mobile_1; ?>" >
+                                <input type="hidden" name="id" class="form-control" value="<?php echo $companyInfoSingle->id; ?>" >
                             </div>
 
                             <div class="form-group">
-                                <label for="email">Order By</label>
-                                <select class="form-control" name="status">
-                                    <option value="1">Active</option>
-                                    <option value="0">Inactive</option>
-                                </select>
+                                <label for="email">Mobile 2:</label>
+                                <input type="text" name="mobile_2" class="form-control" value="<?php echo $companyInfoSingle->mobile_2; ?>" >
                             </div>
+                            
+                            <div class="form-group">
+                                <label for="email">Mobile 3:</label>
+                                <input type="text" name="mobile_3" class="form-control" value="<?php echo $companyInfoSingle->mobile_3; ?>" >
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email">Email 1:</label>
+                                <input type="text" name="email_1" class="form-control" value="<?php echo $companyInfoSingle->email_1; ?>" >
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email">Email 2:</label>
+                                <input type="text" name="email_2" class="form-control" value="<?php echo $companyInfoSingle->email_2; ?>" >
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email">Company address 1:</label>
+                                <input type="text" name="company_add_1" class="form-control" value="<?php echo $companyInfoSingle->company_add_1; ?>" >
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email">Company address 2:</label>
+                                <input type="text" name="company_add_2" class="form-control" value="<?php echo $companyInfoSingle->company_add_2; ?>" >
+                            </div>
+                            
+                           
+                            <div class="form-group">
+                                <label for="email">Header Logo:</label>
+                                <input type="file" name="logo_header" class="form-control" value="" >
+                                <input type="hidden" name="old_logo_header" class="form-control" value="<?php echo $companyInfoSingle->logo_header;?>" >
+                                <span class="alert alert-danger text-center">Image size will be (736 x 220)</span><br/>
+                                <img src="<?php echo base_url().$companyInfoSingle->logo_header;?>" style="height: 50px;" />
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email">Footer Image:</label>
+                                <input type="file" name="footer_img" class="form-control" value="" >
+                                <input type="hidden" name="old_footer_img" class="form-control" value="<?php echo $companyInfoSingle->footer_img;?>" >
+                                <span class="alert alert-danger text-center">Image size will be (500 x 333)</span><br/>
+                                <img src="<?php echo base_url().$companyInfoSingle->footer_img;?>" style="height: 50px;" />
+                            </div>
+                            
+                           
 
                         </div>
 
@@ -103,8 +121,4 @@
     <!-- End container-fluid-->
     
     </div><!--End content-wrapper-->
-
-<script>
-    document.forms['slider-update'].elements['status'].value=<?php echo $sliderListSingle->status; ?>;//for active inactive.
-</script>
    

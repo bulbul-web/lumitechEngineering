@@ -69,4 +69,12 @@ $route['delete-status-slider/(:any)'] = 'dashboard/delete_status_slider/$1';
 $route['edit-slider/(:any)'] = 'dashboard/edit_slider_form/$1';
 $route['slider-update'] = 'dashboard/slider_update';
 
-$route['company-info/(:any)'] = 'companyInfo/company_info/$1';
+$route['company-info/(:any)'] = 'companyInfo/edit_company_profile/$1';
+$route['company-update'] = 'companyInfo/company_update';
+
+$route['services'] = 'services/services_list';
+$route['services-add'] = 'services/services_add_form';
+$route['service-save'] = 'services/service_save';
+$route['edit-service/(:any)'] = 'services/edit_service_form/$1';
+$route['service-update'] = 'services/service_update';
+$route['service-details-page/(:any)'] = 'welcome/service_details_page/$1';

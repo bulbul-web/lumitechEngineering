@@ -21,7 +21,7 @@
                 <h4 class="text-uppercase text-strong margin-top-30">About Our Company</h4>
                 <div class="margin">
                   <div class="s-12 m-12 l-4 margin-m-bottom">
-                    <a class="image-hover-zoom" href="/"><img src="<?php echo base_url();?>assets/frontend/img/blog-04.jpg" alt=""></a>
+                    <a class="image-hover-zoom" href="/"><img src="<?php echo base_url().$companyInfo->footer_img;?>" alt=""></a>
                   </div>
                   <div class="s-12 m-12 l-8 margin-m-bottom">
                     <p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat.</p>
@@ -39,7 +39,7 @@
                   <i class="icon-placepin text-primary text-size-12"></i>
                 </div>
                 <div class="s-11 m-11 l-11 margin-bottom-10">
-                  <p><b>Adress:</b> Responsive Street 7, London, UK</p>
+                  <p><b>Adress:</b> <?php echo $companyInfo->company_add_1?></p>
                 </div>
               </div>
               <div class="line">
@@ -47,7 +47,7 @@
                   <i class="icon-mail text-primary text-size-12"></i>
                 </div>
                 <div class="s-11 m-11 l-11 margin-bottom-10">
-                  <p><a href="/" class="text-primary-hover"><b>E-mail:</b> contact@sampledomain.com</a></p>
+                  <p><a href="/" class="text-primary-hover"><b>E-mail:</b> <?php echo $companyInfo->email_1;?></a></p>
                 </div>
               </div>
               <div class="line">
@@ -55,7 +55,7 @@
                   <i class="icon-smartphone text-primary text-size-12"></i>
                 </div>
                 <div class="s-11 m-11 l-11 margin-bottom-10">
-                  <p><b>Phone:</b> 0700 000 987</p>
+                  <p><b>Phone:</b> <?php echo $companyInfo->mobile_1;?></p>
                 </div>
               </div>
               <div class="line">

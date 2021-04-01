@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Dashboard extends CI_Controller {
+class Services extends CI_Controller {
 
 	public function __construct() {
 		parent::__construct();
@@ -17,228 +17,189 @@ class Dashboard extends CI_Controller {
             redirect('login');
         }
 	}
-	
-	public function index()
-	{
-		$data = array();
-		$id = $this->session->userdata('user_id');
-        $data['userInfo'] = $this->users_model->user_info($id);
-		$data['title'] = 'Home';
-		$data['css'] = $this->load->view("admin/include/css", $data, true);
-		$data['js'] = $this->load->view("admin/include/js", $data, true);
-		$data['sidebar'] = $this->load->view("admin/include/sidebar", $data, true);
-		$data['header'] = $this->load->view("admin/include/header", $data, true);
-		$data['content'] = $this->load->view("admin/pages/homeContent", $data, true);
-		$data['footer'] = $this->load->view("admin/include/footer", $data, true);
-		$this->load->view('admin/index', $data);
-	}
-	
-	public function slider()
-	{
-		$data = array();
-		$id = $this->session->userdata('user_id');
-        $data['userInfo'] = $this->users_model->user_info($id);
-		$data['sliderList'] = $this->query_model->slider_list();
-		$data['title'] = 'Slider List';
-		$data['css'] = $this->load->view("admin/include/css", $data, true);
-		$data['js'] = $this->load->view("admin/include/js", $data, true);
-		$data['sidebar'] = $this->load->view("admin/include/sidebar", $data, true);
-		$data['header'] = $this->load->view("admin/include/header", $data, true);
-		$data['content'] = $this->load->view("admin/pages/slider", $data, true);
-		$data['footer'] = $this->load->view("admin/include/footer", $data, true);
-		$this->load->view('admin/index', $data);
-	}
 
-	public function slider_add_form(){
-		$data = array();
+    public function services_list(){
+        $data = array();
 		$id = $this->session->userdata('user_id');
         $data['userInfo'] = $this->users_model->user_info($id);
-		$data['title'] = 'Slider Add';
+        $data['serviceList'] = $this->query_model->services_list();
+		$data['title'] = 'Service List';
 		$data['css'] = $this->load->view("admin/include/css", $data, true);
 		$data['js'] = $this->load->view("admin/include/js", $data, true);
 		$data['sidebar'] = $this->load->view("admin/include/sidebar", $data, true);
 		$data['header'] = $this->load->view("admin/include/header", $data, true);
-		$data['content'] = $this->load->view("admin/pages/slider_add_form", $data, true);
+		$data['content'] = $this->load->view("admin/pages/services_list", $data, true);
 		$data['footer'] = $this->load->view("admin/include/footer", $data, true);
 		$this->load->view('admin/index', $data);
-	}
+    }
+    
 	
-	public function edit_slider_form($slider_id){
-		$data = array();
+
+    public function services_add_form(){
+        $data = array();
 		$id = $this->session->userdata('user_id');
         $data['userInfo'] = $this->users_model->user_info($id);
-		$data['sliderListSingle'] = $this->query_model->slider_list_single($slider_id);
-		$data['title'] = 'Slider Add';
+		$data['title'] = 'Service List';
 		$data['css'] = $this->load->view("admin/include/css", $data, true);
 		$data['js'] = $this->load->view("admin/include/js", $data, true);
 		$data['sidebar'] = $this->load->view("admin/include/sidebar", $data, true);
 		$data['header'] = $this->load->view("admin/include/header", $data, true);
-		$data['content'] = $this->load->view("admin/pages/slider_update_form", $data, true);
+		$data['content'] = $this->load->view("admin/pages/services_add_form", $data, true);
 		$data['footer'] = $this->load->view("admin/include/footer", $data, true);
 		$this->load->view('admin/index', $data);
-	}
+    }
+    
+	public function edit_service_form($service_id){
+        $data = array();
+		$id = $this->session->userdata('user_id');
+        $data['userInfo'] = $this->users_model->user_info($id);
+		$data['serviceListSingle'] = $this->query_model->service_list_single($service_id);
+		$data['title'] = 'Service Update';
+		$data['css'] = $this->load->view("admin/include/css", $data, true);
+		$data['js'] = $this->load->view("admin/include/js", $data, true);
+		$data['sidebar'] = $this->load->view("admin/include/sidebar", $data, true);
+		$data['header'] = $this->load->view("admin/include/header", $data, true);
+		$data['content'] = $this->load->view("admin/pages/service_update_form", $data, true);
+		$data['footer'] = $this->load->view("admin/include/footer", $data, true);
+		$this->load->view('admin/index', $data);
+    }
 
 
-	public function slider_save(){
-		$this->form_validation->set_rules('title', 'Title', 'required|min_length[2]|max_length[150]');
-        $this->form_validation->set_rules('description', 'Description', 'required|min_length[2]|max_length[150]');
+    public function service_save(){
+        $this->form_validation->set_rules('title', 'Title', 'required|min_length[2]|max_length[250]');
+        $this->form_validation->set_rules('details', 'details', 'required|min_length[2]|max_length[1000]');
         
         $this->form_validation->set_error_delimiters('<div class="error">', '</div>');
         
         if($this->form_validation->run()){
-			if($_FILES['slider_img']['name'] == ''){
+			if($_FILES['service_image']['name'] == ''){
 				$sdata = array();
 				$sdata['message'] = 'Image Field Required';
 				$this->session->set_userdata($sdata);
-				$this->slider_add_form();
+				$this->services_add_form();
 			}else{
-				if ($_FILES['slider_img']['size'] <= 10000000) {
+				if ($_FILES['service_image']['size'] <= 10000000) {
 				
-					$fileExt = pathinfo($_FILES['slider_img']['name'], PATHINFO_EXTENSION);
+					$fileExt = pathinfo($_FILES['service_image']['name'], PATHINFO_EXTENSION);
 					if ($fileExt == 'jpg' || $fileExt == 'png'){
 	
 						
-						$file = $_FILES["slider_img"]['tmp_name'];
+						$file = $_FILES["service_image"]['tmp_name'];
 						list($width, $height) = getimagesize($file);
 	
-						if($width == "1300" || $height == "468"){
+						if($width == "768" || $height == "450"){
 	
-							$result = $this->do_upload('slider_img');
+							$result = $this->do_upload('service_image');
 							if ($result['upload_data']) {
-								$img = '/assets/admin_assets/images/uploadedFile/' . $result['upload_data']['file_name'];
+								$img = '/assets/frontend/img/' . $result['upload_data']['file_name'];
 								$data['title'] = $this->input->post('title', true);
-								$data['description'] = $this->input->post('description', true);
-								$data['order_by'] = $this->input->post('order_by', true);
+								$data['details'] = $this->input->post('details', true);
 								$data['status'] = '1';
-								$data['slider_img'] = $img;
+								$data['service_image'] = $img;
 
-								$this->query_model->slider_save($data);
+								$this->query_model->service_save($data);
 
 								$sdata = array();
 								$sdata['message'] = 'Successfully Save';
 								$this->session->set_userdata($sdata);
-								$this->slider_add_form();
+								$this->services_add_form();
 							}
 						}else{
 							$sdata = array();
-							$sdata['message'] = 'Image size will be (1300 x 468)';
+							$sdata['message'] = 'Image size will be (768 x 450)';
 							$this->session->set_userdata($sdata);
-							$this->slider_add_form();
+							$this->services_add_form();
 						}
 					}else{
 						$sdata = array();
 						$sdata['message'] = 'Select an image (jpg/png)';
 						$this->session->set_userdata($sdata);
-						$this->slider_add_form();
+						$this->services_add_form();
 					}
 				}else{
 					$sdata = array();
 					$sdata['message'] = 'Select an image in size less than 1MB';
 					$this->session->set_userdata($sdata);
-					$this->slider_add_form();
+					$this->services_add_form();
 				}
 			}
 		}else {
-			$this->slider_add_form();
+			$this->services_add_form();
 		}
-	}
-
-	public function slider_update(){
-		$slider_id = $this->input->post('id', true);
-		$this->form_validation->set_rules('title', 'Title', 'required|min_length[2]|max_length[150]');
-        $this->form_validation->set_rules('description', 'Description', 'required|min_length[2]|max_length[150]');
+    }
+    
+	
+	public function service_update(){
+		$service_id = $this->input->post('id', true);
+        $this->form_validation->set_rules('title', 'Title', 'required|min_length[2]|max_length[250]');
+        $this->form_validation->set_rules('details', 'details', 'required|min_length[2]|max_length[1000]');
         
         $this->form_validation->set_error_delimiters('<div class="error">', '</div>');
         
         if($this->form_validation->run()){
-			if($_FILES['slider_img']['name'] == '' || $_FILES['slider_img']['size'] == 0){
-				$img = $this->input->post('old_slider_img', TRUE);
-                $this->query_model->update_slider($img);
+			if($_FILES['service_image']['name'] == ''){
+				$img = $this->input->post('old_service_image', TRUE);
+                $this->query_model->update_service($img);
 				$sdata = array();
                 $sdata['message'] = 'Successfully Updated';
                 $this->session->set_userdata($sdata);
-                $this->edit_slider_form($slider_id);
+                $this->edit_service_form($service_id);
 			}else{
-				if ($_FILES['slider_img']['size'] <= 10000000) {
+				if ($_FILES['service_image']['size'] <= 10000000) {
 				
-					$fileExt = pathinfo($_FILES['slider_img']['name'], PATHINFO_EXTENSION);
+					$fileExt = pathinfo($_FILES['service_image']['name'], PATHINFO_EXTENSION);
 					if ($fileExt == 'jpg' || $fileExt == 'png'){
 	
 						
-						$file = $_FILES["slider_img"]['tmp_name'];
+						$file = $_FILES["service_image"]['tmp_name'];
 						list($width, $height) = getimagesize($file);
 	
-						if($width == "1300" || $height == "468"){
+						if($width == "768" || $height == "450"){
 	
-							$path = "./".$this->input->post('old_slider_img', TRUE);
+							$path = "./".$this->input->post('old_service_image', TRUE);
                             unlink($path);
 
-							$result = $this->do_upload('slider_img');
+							$result = $this->do_upload('service_image');
 							if ($result['upload_data']) {
-								$img = '/assets/admin_assets/images/uploadedFile/' . $result['upload_data']['file_name'];
-								$this->query_model->update_slider($img);
+								$img = '/assets/frontend/img/' . $result['upload_data']['file_name'];
+								$this->query_model->update_service($img);
 
 								$sdata = array();
 								$sdata['message'] = 'Successfully Updated';
 								$this->session->set_userdata($sdata);
-								$this->edit_slider_form($slider_id);
+								$this->edit_service_form($service_id);
 							}
 						}else{
 							$sdata = array();
-							$sdata['message'] = 'Image size will be (1300 x 468)';
+							$sdata['message'] = 'Image size will be (768 x 450)';
 							$this->session->set_userdata($sdata);
-							$this->edit_slider_form($slider_id);
+							$this->edit_service_form($service_id);
 						}
 					}else{
 						$sdata = array();
 						$sdata['message'] = 'Select an image (jpg/png)';
 						$this->session->set_userdata($sdata);
-						$this->edit_slider_form($slider_id);
+						$this->edit_service_form($service_id);
 					}
 				}else{
 					$sdata = array();
 					$sdata['message'] = 'Select an image in size less than 1MB';
 					$this->session->set_userdata($sdata);
-					$this->edit_slider_form($slider_id);
+					$this->edit_service_form($service_id);
 				}
 			}
 		}else {
-			$this->edit_slider_form($slider_id);
+			$this->edit_service_form($service_id);
 		}
-	}
-
-
-
-	public function delete_status_slider($slider_id){
-		$this->db->set('status', '0');
-        $this->db->set('delete_status', 'deleted');
-        $this->db->where('id', $slider_id);
-        $this->db->update('tbl_sliders');
-		$sdata = array();
-		$sdata['message'] = 'Slider Deleted Successfully!';
-		$this->session->set_userdata($sdata);
-		$this->slider();
-	}
+    }
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-	//------------------------------------------------------- img upload function -------------------------------
+    //------------------------------------------------------- img upload function -------------------------------
 
     public function do_upload($image_file) {
-        $config['upload_path'] = './assets/admin_assets/images/uploadedFile/';
+        $config['upload_path'] = './assets/frontend/img/';
         $config['allowed_types'] = 'jpg|png';
         $new_name = microtime() . $_FILES["$image_file"]['name'];
         $config['file_name'] = md5($new_name);
@@ -257,6 +218,5 @@ class Dashboard extends CI_Controller {
             return $data;
         }
     }
-
 
 }

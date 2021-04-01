@@ -21,6 +21,8 @@ class Welcome extends CI_Controller {
 	public function index()
 	{
 		$data = array();
+		$cmny_id = 1;
+		$data['companyInfo'] = $this->query_model->company_info_single($cmny_id);
 		$data['title'] = 'Home';
 		$data['header'] = $this->load->view("frontend/header", $data, true);
 		$data['main'] = $this->load->view("frontend/main", $data, true);
@@ -31,6 +33,8 @@ class Welcome extends CI_Controller {
 	public function products()
 	{
 		$data = array();
+		$cmny_id = 1;
+		$data['companyInfo'] = $this->query_model->company_info_single($cmny_id);
 		$data['title'] = 'Products List';
 		$data['header'] = $this->load->view("frontend/header", $data, true);
 		$data['main'] = $this->load->view("frontend/products", $data, true);
@@ -41,6 +45,8 @@ class Welcome extends CI_Controller {
 	public function about()
 	{
 		$data = array();
+		$cmny_id = 1;
+		$data['companyInfo'] = $this->query_model->company_info_single($cmny_id);
 		$data['title'] = 'About';
 		$data['header'] = $this->load->view("frontend/header", $data, true);
 		$data['main'] = $this->load->view("frontend/about", $data, true);
@@ -51,6 +57,8 @@ class Welcome extends CI_Controller {
 	public function gallery()
 	{
 		$data = array();
+		$cmny_id = 1;
+		$data['companyInfo'] = $this->query_model->company_info_single($cmny_id);
 		$data['title'] = 'Gallery';
 		$data['header'] = $this->load->view("frontend/header", $data, true);
 		$data['main'] = $this->load->view("frontend/gallery", $data, true);
@@ -61,9 +69,24 @@ class Welcome extends CI_Controller {
 	public function contact()
 	{
 		$data = array();
+		$cmny_id = 1;
+		$data['companyInfo'] = $this->query_model->company_info_single($cmny_id);
 		$data['title'] = 'Contact';
 		$data['header'] = $this->load->view("frontend/header", $data, true);
 		$data['main'] = $this->load->view("frontend/contact", $data, true);
+		$data['footer'] = $this->load->view("frontend/footer", $data, true);
+		$this->load->view('indexHome', $data);
+	}
+
+	public function service_details_page($service_id)
+	{
+		$data = array();
+		$cmny_id = 1;
+		$data['companyInfo'] = $this->query_model->company_info_single($cmny_id);
+		$data['serviceListSingle'] = $this->query_model->service_list_single($service_id);
+		$data['title'] = 'Contact';
+		$data['header'] = $this->load->view("frontend/header", $data, true);
+		$data['main'] = $this->load->view("frontend/service_details_page", $data, true);
 		$data['footer'] = $this->load->view("frontend/footer", $data, true);
 		$this->load->view('indexHome', $data);
 	}

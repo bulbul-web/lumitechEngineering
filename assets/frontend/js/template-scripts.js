@@ -10,6 +10,18 @@ jQuery(document).ready(function($) {
     autoplay: true,
     autoplayTimeout: 4000
   });
+  
+  var owl = $('.carousel-client');
+  owl.owlCarousel({
+    nav: true,
+    dots: true,
+    items: 5,
+    loop: true,
+    navText: ["&#xf007","&#xf006"],
+    autoplay: true,
+    autoplayTimeout: 4000
+  });
+
   var owl = $('.carousel-fade-transition');
   owl.owlCarousel({
     nav: true,

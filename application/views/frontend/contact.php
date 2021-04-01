@@ -17,9 +17,8 @@
             </div>
             <div class="margin-left-80 margin-bottom">
                 <h4 class="text-strong margin-bottom-0">Company Address</h4>
-                <p>Responsive Street 7<br>
-                    London<br>
-                    UK, Europe
+                <p><?php echo $companyInfo->company_add_1?><br>
+                <!-- <?php echo $companyInfo->company_add_2?><br> -->
                 </p>               
             </div>
             <div class="float-left">
@@ -27,8 +26,8 @@
             </div>
             <div class="margin-left-80 margin-bottom">
                 <h4 class="text-strong margin-bottom-0">E-mail</h4>
-                <p>contact@sampledomain.com<br>
-                    office@sampledomain.com
+                <p><?php echo $companyInfo->email_1?><br>
+                <?php echo $companyInfo->email_2?>
                 </p>              
             </div>
             <div class="float-left">
@@ -36,9 +35,9 @@
             </div>
             <div class="margin-left-80">
                 <h4 class="text-strong margin-bottom-0">Phone Numbers</h4>
-                <p>0800 4521 800 50<br>
-                    0450 5896 625 16<br>
-                    0798 6546 465 15
+                <p><?php echo $companyInfo->mobile_1?><br>
+                <?php echo $companyInfo->mobile_2?><br>
+                <?php echo $companyInfo->mobile_3?>
                 </p>             
             </div>
             </div>

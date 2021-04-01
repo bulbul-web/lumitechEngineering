@@ -23,6 +23,7 @@
         <ul class="sidebar-submenu">
   		    <li><a href="<?php echo base_url();?>slider"><i class="fa fa-circle-o"></i> Slider</a></li>
   		    <li><a href="<?php echo base_url();?>company-info/1"><i class="fa fa-circle-o"></i> Company Info</a></li>
+  		    <li><a href="<?php echo base_url();?>services"><i class="fa fa-circle-o"></i> Services</a></li>
         </ul>
       </li>
       

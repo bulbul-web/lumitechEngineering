@@ -5,18 +5,18 @@
       <!-- Breadcrumb-->
      <div class="row pt-2 pb-2">
         <div class="col-sm-9">
-		    <h4 class="page-title">Slider Update</h4>
+		    <h4 class="page-title">Service Update</h4>
 		    <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="<?php echo base_url();?>dashboard">Dashboard</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Slider Update</li>
+            <li class="breadcrumb-item active" aria-current="page">Service Update</li>
          </ol>
 	   </div>
        
 	   <div class="col-sm-3">
             <div class="btn-group float-sm-right">
                 <!-- <a href="<?php echo base_url();?>product-purchese-list" class="btn btn-outline-primary waves-effect waves-light"> Product List</a> -->
-                <a href="<?php echo base_url();?>edit-slider/<?php echo $sliderListSingle->id;?>" class="btn btn-outline-primary waves-effect waves-light" >  Refresh </a>
-                <a href="<?php echo base_url();?>slider" class="btn btn-outline-primary waves-effect waves-light" >  Back </a>
+                <a href="<?php echo base_url();?>edit-service/<?php echo $serviceListSingle->id;?>" class="btn btn-outline-primary waves-effect waves-light" >  Refresh </a>
+                <a href="<?php echo base_url();?>services" class="btn btn-outline-primary waves-effect waves-light" >  Back </a>
             
             </div>
         </div>
@@ -26,7 +26,7 @@
       <div class="row">
         <div class="col-lg-12">
           <div class="card">
-             <div class="card-header text-uppercase">Slider Update</div>
+             <div class="card-header text-uppercase">Service Update</div>
              <div class="card-body">
              <div class="alert alert-danger text-center">
                         
@@ -40,37 +40,34 @@
 					?>
 				</div>
 			 
-             <form name="slider-update" id="sliderUpdate" action="<?php echo base_url();?>slider-update" method="post" enctype="multipart/form-data">
+             <form name="service-update" id="serviceUpdate" action="<?php echo base_url();?>service-update" method="post" enctype="multipart/form-data">
                     
                     <div class="row">
                         <div class="col-md-12">
                             
                             <div class="form-group">
                                 <label for="email">Title:</label>
-                                <input type="text" name="title" class="form-control" value="<?php echo $sliderListSingle->title; ?>" >
-                                <input type="hidden" name="id" class="form-control" value="<?php echo $sliderListSingle->id; ?>" >
+                                <input type="text" name="title" class="form-control" value="<?php echo $serviceListSingle->title; ?>" >
+                                <input type="hidden" name="id" class="form-control" value="<?php echo $serviceListSingle->id; ?>" >
                                 <?php echo form_error('title', '<div class="error">', '</div>'); ?>
                             </div>
                             
                             <div class="form-group">
                                 <label for="email">Description:</label>
-                                <input type="text" name="description" class="form-control" value="<?php echo $sliderListSingle->description; ?>" >
-                                <?php echo form_error('description', '<div class="error">', '</div>'); ?>
+                                <input type="text" name="details" class="form-control" value="<?php echo $serviceListSingle->details; ?>" >
+                                <?php echo form_error('details', '<div class="error">', '</div>'); ?>
                             </div>
                             
                             <div class="form-group">
-                                <label for="email">Slider Image:</label>
-                                <input type="file" name="slider_img" class="form-control" value="" >
-                                <input type="hidden" name="old_slider_img" class="form-control" value="<?php echo $sliderListSingle->slider_img;?>" >
-                                <?php echo form_error('slider_img', '<div class="error">', '</div>'); ?>
-                                <span class="alert alert-danger text-center">Image size will be (1300 x 468)</span><br/>
-                                <img src="<?php echo base_url().$sliderListSingle->slider_img;?>" style="height: 50px;" />
+                                <label for="email">Service Image:</label>
+                                <input type="file" name="service_image" class="form-control" value="" >
+                                <input type="hidden" name="old_service_image" class="form-control" value="<?php echo $serviceListSingle->service_image;?>" >
+                                <?php echo form_error('service_image', '<div class="error">', '</div>'); ?>
+                                <span class="alert alert-danger text-center">Image size will be (768 x 450)</span><br/>
+                                <img src="<?php echo base_url().$serviceListSingle->service_image;?>" style="height: 50px;" />
                             </div>
                             
-                            <div class="form-group">
-                                <label for="email">Order By</label>
-                                <input type="number" name="order_by" class="form-control" value="<?php echo $sliderListSingle->order_by; ?>" >
-                            </div>
+                            
 
                             <div class="form-group">
                                 <label for="email">Status</label>
@@ -105,6 +102,6 @@
     </div><!--End content-wrapper-->
 
 <script>
-    document.forms['slider-update'].elements['status'].value=<?php echo $sliderListSingle->status; ?>;//for active inactive.
+    document.forms['service-update'].elements['status'].value=<?php echo $serviceListSingle->status; ?>;//for active inactive.
 </script>
    
