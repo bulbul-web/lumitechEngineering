@@ -66,7 +66,7 @@ class Services extends CI_Controller {
 
 
     public function service_save(){
-        $this->form_validation->set_rules('title', 'Title', 'required|min_length[2]|max_length[250]');
+        $this->form_validation->set_rules('title', 'Title', 'required|min_length[1]|max_length[250]');
         $this->form_validation->set_rules('details', 'details', 'required|min_length[2]|max_length[1000]');
         
         $this->form_validation->set_error_delimiters('<div class="error">', '</div>');
@@ -131,7 +131,7 @@ class Services extends CI_Controller {
 	
 	public function service_update(){
 		$service_id = $this->input->post('id', true);
-        $this->form_validation->set_rules('title', 'Title', 'required|min_length[2]|max_length[250]');
+        $this->form_validation->set_rules('title', 'Title', 'required|min_length[1]|max_length[250]');
         $this->form_validation->set_rules('details', 'details', 'required|min_length[2]|max_length[1000]');
         
         $this->form_validation->set_error_delimiters('<div class="error">', '</div>');

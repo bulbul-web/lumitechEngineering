@@ -46,7 +46,15 @@
                             
                             <div class="form-group">
                                 <label for="email">Title:</label>
-                                <input type="text" name="title" class="form-control" value="<?php echo set_value('title'); ?>" >
+                                <!-- <input type="text" name="title" class="form-control" value="<?php echo set_value('title'); ?>" >
+                                <?php echo form_error('title', '<div class="error">', '</div>'); ?> -->
+                                <select name="title" class="form-control">
+                                    <option value="Renewable energy">Renewable energy</option>
+                                    <option value="LED Lights">LED Lights</option>
+                                    <option value="Chemical and dyes">Chemical and dyes</option>
+                                    <option value="Constraction">Constraction</option>
+                                    <option value="AGRO (Organic firming)">AGRO (Organic firming)</option>
+                                </select>
                                 <?php echo form_error('title', '<div class="error">', '</div>'); ?>
                             </div>
                             

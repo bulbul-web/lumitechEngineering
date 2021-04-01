@@ -47,8 +47,16 @@
                             
                             <div class="form-group">
                                 <label for="email">Title:</label>
-                                <input type="text" name="title" class="form-control" value="<?php echo $serviceListSingle->title; ?>" >
+                                <!-- <input type="text" name="title" class="form-control" value="<?php echo $serviceListSingle->title; ?>" > -->
                                 <input type="hidden" name="id" class="form-control" value="<?php echo $serviceListSingle->id; ?>" >
+                                <!-- <?php echo form_error('title', '<div class="error">', '</div>'); ?> -->
+                                <select name="title" class="form-control">
+                                    <option value="Renewable energy" <?php if($serviceListSingle->title == "Renewable energy"): ?>selected<?php endif;?>>Renewable energy</option>
+                                    <option value="LED Lights" <?php if($serviceListSingle->title == "LED Lights"): ?>selected<?php endif;?>>LED Lights</option>
+                                    <option value="Chemical and dyes" <?php if($serviceListSingle->title == "Chemical and dyes"): ?>selected<?php endif;?>>Chemical and dyes</option>
+                                    <option value="Constraction" <?php if($serviceListSingle->title == "Constraction"): ?>selected<?php endif;?>>Constraction</option>
+                                    <option value="AGRO (Organic firming)" <?php if($serviceListSingle->title == "AGRO (Organic firming)"): ?>selected<?php endif;?>>AGRO (Organic firming)</option>
+                                </select>
                                 <?php echo form_error('title', '<div class="error">', '</div>'); ?>
                             </div>
                             

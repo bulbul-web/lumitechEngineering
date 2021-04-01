@@ -30,14 +30,14 @@ class Welcome extends CI_Controller {
 		$this->load->view('indexHome', $data);
 	}
 	
-	public function products()
+	public function projects()
 	{
 		$data = array();
 		$cmny_id = 1;
 		$data['companyInfo'] = $this->query_model->company_info_single($cmny_id);
-		$data['title'] = 'Products List';
+		$data['title'] = 'Projects List';
 		$data['header'] = $this->load->view("frontend/header", $data, true);
-		$data['main'] = $this->load->view("frontend/products", $data, true);
+		$data['main'] = $this->load->view("frontend/projects", $data, true);
 		$data['footer'] = $this->load->view("frontend/footer", $data, true);
 		$this->load->view('indexHome', $data);
 	}
@@ -84,9 +84,66 @@ class Welcome extends CI_Controller {
 		$cmny_id = 1;
 		$data['companyInfo'] = $this->query_model->company_info_single($cmny_id);
 		$data['serviceListSingle'] = $this->query_model->service_list_single($service_id);
-		$data['title'] = 'Contact';
+		$data['title'] = 'Service Details';
+		$data['productsMenu'] = $this->load->view("frontend/productsMenu", $data, true);
 		$data['header'] = $this->load->view("frontend/header", $data, true);
 		$data['main'] = $this->load->view("frontend/service_details_page", $data, true);
+		$data['footer'] = $this->load->view("frontend/footer", $data, true);
+		$this->load->view('indexHome', $data);
+	}
+	
+	public function productsPage($product_id)
+	{
+		$data = array();
+		$cmny_id = 1;
+		$data['companyInfo'] = $this->query_model->company_info_single($cmny_id);
+		// $data['productListSingle'] = $this->query_model->product_list_single($product_id);
+		$data['title'] = 'Product Details';
+		$data['productsMenu'] = $this->load->view("frontend/productsMenu", $data, true);
+		$data['header'] = $this->load->view("frontend/header", $data, true);
+		$data['main'] = $this->load->view("frontend/productsPage", $data, true);
+		$data['footer'] = $this->load->view("frontend/footer", $data, true);
+		$this->load->view('indexHome', $data);
+	}
+
+	public function product_details($product_dtls_id)
+	{
+		$data = array();
+		$cmny_id = 1;
+		$data['companyInfo'] = $this->query_model->company_info_single($cmny_id);
+		// $data['serviceListSingle'] = $this->query_model->service_list_single($service_id);
+		$data['title'] = 'Service Details';
+		$data['productsMenu'] = $this->load->view("frontend/productsMenu", $data, true);
+		$data['header'] = $this->load->view("frontend/header", $data, true);
+		$data['main'] = $this->load->view("frontend/product_details", $data, true);
+		$data['footer'] = $this->load->view("frontend/footer", $data, true);
+		$this->load->view('indexHome', $data);
+	}
+	
+	public function project_details($project_id)
+	{
+		$data = array();
+		$cmny_id = 1;
+		$data['companyInfo'] = $this->query_model->company_info_single($cmny_id);
+		// $data['serviceListSingle'] = $this->query_model->service_list_single($service_id);
+		$data['title'] = 'Service Details';
+		$data['productsMenu'] = $this->load->view("frontend/productsMenu", $data, true);
+		$data['header'] = $this->load->view("frontend/header", $data, true);
+		$data['main'] = $this->load->view("frontend/project_details", $data, true);
+		$data['footer'] = $this->load->view("frontend/footer", $data, true);
+		$this->load->view('indexHome', $data);
+	}
+	
+	public function category_details($category_id)
+	{
+		$data = array();
+		$cmny_id = 1;
+		$data['companyInfo'] = $this->query_model->company_info_single($cmny_id);
+		// $data['serviceListSingle'] = $this->query_model->service_list_single($service_id);
+		$data['title'] = 'Service Details';
+		$data['productsMenu'] = $this->load->view("frontend/productsMenu", $data, true);
+		$data['header'] = $this->load->view("frontend/header", $data, true);
+		$data['main'] = $this->load->view("frontend/category_details", $data, true);
 		$data['footer'] = $this->load->view("frontend/footer", $data, true);
 		$this->load->view('indexHome', $data);
 	}

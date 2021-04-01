@@ -24,13 +24,13 @@
                 </div>
 
                 <div class="s-12 m-10 l-10 margin-m-bottom-30">
-                    <h2 class="text-size-30 text-center"><?php echo $serviceListSingle->title?></h2>
+                    <h2 class="text-size-30 text-center">LED 03 model</h2>
                     
                     <center>
-                        <img class="margin-bottom details-page-img" src="<?php echo base_url().$serviceListSingle->service_image;?>" alt="">
+                        <img class="margin-bottom details-page-img" src="<?php echo base_url();?>assets/frontend/img/cecab40e13e69005acb697fb02af9e68.jpg" alt="">
                     </center>
                     <p>
-                        <?php echo $serviceListSingle->details?>
+                        This is product details section
                     </p> 
                     
                     

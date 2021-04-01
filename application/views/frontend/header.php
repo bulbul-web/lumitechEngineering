@@ -42,12 +42,12 @@
                             <li><a>Service 1 B</a></li>
                         </ul>
                     </li> -->
-
-                    <li><a href="<?php base_url();?>products">Renewable energy</a></li>
-                    <li><a href="<?php base_url();?>products">LED Lights</a></li>
-                    <li><a href="<?php base_url();?>products">Chemical and dyes</a></li>
-                    <li><a href="<?php base_url();?>products">Constraction</a></li>
-                    <li><a href="<?php base_url();?>products">AGRO (Organic firming)</a></li>
+                    <?php 
+                        $service_result = $this->db->query("SELECT * FROM tbl_services WHERE status = 1 ORDER BY id ASC")->result();
+                        foreach($service_result as $service):
+                    ?>
+                        <li><a href="<?php echo base_url().'service-details-page/'.$service->id;?>"><?php echo $service->title;?></a></li>
+                    <?php endforeach;?>
                 </ul>
             </li>
             <li><a href="<?php base_url();?>gallery">Cateloge</a></li>

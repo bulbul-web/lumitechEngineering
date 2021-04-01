@@ -50,10 +50,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |		my-controller/my-method	-> my_controller/my_method
 */
 $route['default_controller'] = 'welcome';
-$route['products'] = 'welcome/products';
+$route['all-projects'] = 'welcome/projects';
 $route['about'] = 'welcome/about';
 $route['gallery'] = 'welcome/gallery';
 $route['contact'] = 'welcome/contact';
+$route['service-details-page/(:any)'] = 'welcome/service_details_page/$1';
+$route['products/(:any)'] = 'welcome/productsPage/$1';
+$route['product-details/(:any)'] = 'welcome/product_details/$1';
+$route['project-details/(:any)'] = 'welcome/project_details/$1';
+$route['category-details/(:any)'] = 'welcome/category_details/$1';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
@@ -77,4 +82,3 @@ $route['services-add'] = 'services/services_add_form';
 $route['service-save'] = 'services/service_save';
 $route['edit-service/(:any)'] = 'services/edit_service_form/$1';
 $route['service-update'] = 'services/service_update';
-$route['service-details-page/(:any)'] = 'welcome/service_details_page/$1';

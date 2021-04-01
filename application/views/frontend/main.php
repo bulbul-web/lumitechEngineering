@@ -55,19 +55,19 @@
 
     <!-- Section Project Completed -->
     <section class="section project-completed background-white"> 
-        <h2 class="text-thin headline text-center text-s-size-30 margin-bottom-50">Our completed<span class="text-primary">Projects</span></h2>
+        <h2 class="text-thin headline text-center text-s-size-30 margin-bottom-50">Our completed <span class="text-primary"><a href="<?php echo base_url().'all-projects';?>">Projects</a></span></h2>
         <div class="line">
             <div class="margin">
             <?php 
                 $service_result = $this->db->query("SELECT * FROM tbl_services WHERE status = 1 ORDER BY id DESC")->result();
                 foreach($service_result as $service):
             ?>
-                <div class="s-6 m-6 l-3 margin-m-bottom" style="margin: 15px 0px;">
+                <div class="s-6 m-6 l-3 margin-m-bottom project-ara">
                     <img class="margin-bottom" src="<?php echo base_url().$service->service_image;?>" alt="">
                     <div class="text-center">
                         <h2 class="text-thin"><?php echo $service->title;?></h2>
                         <p><?php echo $service->details;?></p> 
-                        <a class="text-more-info text-primary-hover" href="<?php echo base_url().'service-details-page'.$service->id;?>">Read more</a>                
+                        <a class="text-more-info text-primary-hover" href="<?php echo base_url().'service-details-page/'.$service->id;?>">Read more</a>                
                     </div>
                 </div>
             <?php endforeach;?>
