@@ -1943,11 +1943,11 @@ p.form-success {
 ul.products-ul{
   margin: 10px;
   padding: 5px;
-  background: gray;
+  background: #c4d5dd;
   min-height: 600px;
 }
 ul.products-ul li{
-  background-color: #333;
+  background-color: #1d5b7d;
   list-style-type: none;
   border-radius: 2px;
   border-bottom: 1px solid gray;
@@ -1985,4 +1985,10 @@ ul.products-ul li:hover{
   background-color: gray;
   color: black!important;
   padding: 5px;
+}
+.padding-2x.custom-padding-2x{
+  padding: 0.5rem!important;
+}
+.min-height-400px{
+  min-height: 400px;
 }

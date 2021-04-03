@@ -5,18 +5,18 @@
       <!-- Breadcrumb-->
      <div class="row pt-2 pb-2">
         <div class="col-sm-9">
-		    <h4 class="page-title">Service List</h4>
+		    <h4 class="page-title">Projects List</h4>
 		    <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="<?php echo base_url();?>dashboard">Dashboard</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Service List</li>
+            <li class="breadcrumb-item active" aria-current="page">Projects List</li>
          </ol>
 	   </div>
        
 	   <div class="col-sm-3">
             <div class="btn-group float-sm-right">
                 <!-- <a href="<?php echo base_url();?>product-purchese-list" class="btn btn-outline-primary waves-effect waves-light"> Product List</a> -->
-                <a href="<?php echo base_url();?>services" class="btn btn-outline-primary waves-effect waves-light" >  Refresh </a>
-                <!-- <a href="<?php echo base_url();?>services-add" class="btn btn-outline-primary waves-effect waves-light" >  Service Add </a> -->
+                <a href="<?php echo base_url();?>project-list" class="btn btn-outline-primary waves-effect waves-light" >  Refresh </a>
+                <a href="<?php echo base_url();?>project-add" class="btn btn-outline-primary waves-effect waves-light" >  Project Add </a>
             
             </div>
         </div>
@@ -57,12 +57,12 @@
                 <tbody>
                     <?php
                         $i = 0;
-                        foreach($serviceList as $value):
+                        foreach($projectList as $value):
                         $i++;
                     ?>
                     <tr>
                         <td><?php echo $i;?></td>
-                        <td><img src="<?php echo base_url().$value->service_image;?>" style="height: 80px;" /></td>
+                        <td><img src="<?php echo base_url().$value->project_image;?>" style="height: 80px;" /></td>
                         <td><?php echo $value->title;?></td>
                         <td><?php echo $value->details;?></td>
                         <td>

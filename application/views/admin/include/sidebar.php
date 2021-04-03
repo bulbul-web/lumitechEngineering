@@ -8,6 +8,7 @@
 	 </div>
 	 <ul class="sidebar-menu do-nicescrol">
       <li class="sidebar-header">MAIN NAVIGATION</li>
+      
       <li>
         <a href="<?php echo base_url();?>dashboard" class="waves-effect">
           <i class="icon-home"></i> <span>Dashboard</span> 
@@ -24,7 +25,15 @@
   		    <li><a href="<?php echo base_url();?>slider"><i class="fa fa-circle-o"></i> Slider</a></li>
   		    <li><a href="<?php echo base_url();?>company-info/1"><i class="fa fa-circle-o"></i> Company Info</a></li>
   		    <li><a href="<?php echo base_url();?>services"><i class="fa fa-circle-o"></i> Services</a></li>
+  		    <li><a href="<?php echo base_url();?>products-category"><i class="fa fa-circle-o"></i> Products Category</a></li>
+  		    <li><a href="<?php echo base_url();?>products-list"><i class="fa fa-circle-o"></i> Products</a></li>
         </ul>
+      </li>
+
+      <li>
+        <a href="<?php echo base_url();?>project-list" class="waves-effect">
+          <i class="fa fa-circle-o"></i> <span>Projects</span> 
+        </a>
       </li>
       
     </ul>

@@ -16,61 +16,37 @@
             <div class="line">
 
                 <div class="s-12 m-2 l-2 margin-m-bottom-30">
-                    <?php
+                    <!-- <?php
                         if (isset($productsMenu)):
                             echo $productsMenu;
                         endif;
-                    ?>
+                    ?> -->
+                    <ul class="products-ul">
+                        <?php
+                            $producstMenu = $this->db->query("SELECT * FROM tbl_products_category WHERE service_id = '$singleProductsInfo->service_id' ")->result();
+                            foreach ($producstMenu as $productCat): 
+                        ?>
+                            <li><a href="<?php echo base_url().'products/'.$productCat->id;?>"><?php echo $productCat->category_name?></a></li>
+                        <?php endforeach;?>
+                    </ul>
                 </div>
 
                 <div class="s-12 m-10 l-10 margin-m-bottom-30">
                     
                     <div class="margin text-center">
 
-                        <div class="s-12 m-12 l-4 margin-bottom">
-                            <div class="padding-2x block-bordered border-radius">
-                            <i class="icon-paperplane_ico icon2x text-primary margin-bottom-30"></i>
-                            <h2 class="text-thin">Lightweight</h2>
-                            <p class="margin-bottom-30">Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis</p>
-                            <a class="button border-radius background-primary text-size-12 text-white text-strong" href="<?php echo base_url().'product-details/1';?>">GET MORE INFO</a>
+                        <?php foreach ($allProducts as $productByCatID): ?>
+                            <div class="s-12 m-12 l-4 min-height-400px margin-bottom">
+                                <div class="padding-2x custom-padding-2x block-bordered border-radius">
+                                <img src="<?php echo base_url().$productByCatID->product_image;?>" />
+                                <h2 class="text-thin"><?php echo $productByCatID->product_name;?></h2>
+                                <p class="margin-bottom-30"><?php echo $productByCatID->details;?></p>
+                                <a class="button border-radius background-primary text-size-12 text-white text-strong" href="<?php echo base_url().'product-details/'.$productByCatID->id;?>">GET MORE INFO</a>
+                                </div>
                             </div>
-                        </div>
+                        <?php endforeach;?>
 
-                        <div class="s-12 m-12 l-4 margin-bottom">
-                            <div class="padding-2x block-bordered border-radius">
-                            <i class="icon-display_screen icon2x text-primary margin-bottom-30"></i>
-                            <h2 class="text-thin">Responsive</h2>
-                            <p class="margin-bottom-30">Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis</p>
-                            <a class="button border-radius background-primary text-size-12 text-white text-strong" href="<?php echo base_url().'product-details/1';?>">GET MORE INFO</a>
-                            </div>
-                        </div>
-
-                        <div class="s-12 m-12 l-4 margin-bottom">
-                            <div class="padding-2x block-bordered border-radius">
-                            <i class="icon-heart icon2x text-primary margin-bottom-30"></i>
-                            <h2 class="text-thin">Intuitive</h2>
-                            <p class="margin-bottom-30">Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis</p>
-                            <a class="button border-radius background-primary text-size-12 text-white text-strong" href="<?php echo base_url().'product-details/1';?>">GET MORE INFO</a>
-                            </div>
-                        </div>
-
-                        <div class="s-12 m-12 l-4 margin-bottom">
-                            <div class="padding-2x block-bordered border-radius">
-                            <i class="icon-attachment icon2x text-primary margin-bottom-30"></i>
-                            <h2 class="text-thin">Useful</h2>
-                            <p class="margin-bottom-30">Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis</p>
-                            <a class="button border-radius background-primary text-size-12 text-white text-strong" href="<?php echo base_url().'product-details/1';?>">GET MORE INFO</a>
-                            </div>
-                        </div>
-
-                        <div class="s-12 m-12 l-4 margin-bottom">
-                            <div class="padding-2x block-bordered border-radius">
-                            <i class="icon-reorder icon2x text-primary margin-bottom-30"></i>
-                            <h2 class="text-thin">Responsive navigation</h2>
-                            <p class="margin-bottom-30">Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis</p>
-                            <a class="button border-radius background-primary text-size-12 text-white text-strong" href="<?php echo base_url().'product-details/1';?>">GET MORE INFO</a>
-                            </div>
-                        </div>
+                        
 
                     </div>
                     

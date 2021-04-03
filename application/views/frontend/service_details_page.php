@@ -16,11 +16,15 @@
             <div class="line">
 
                 <div class="s-12 m-2 l-2 margin-m-bottom-30">
-                    <?php
-                        if (isset($productsMenu)):
-                            echo $productsMenu;
-                        endif;
-                    ?>
+
+                    <ul class="products-ul">
+                        <?php
+                            $producstMenu = $this->db->query("SELECT * FROM tbl_products_category WHERE service_id = '$serviceListSingle->id' ")->result();
+                            foreach ($producstMenu as $productCat): 
+                        ?>
+                            <li><a href="<?php echo base_url().'products/'.$productCat->id;?>"><?php echo $productCat->category_name?></a></li>
+                        <?php endforeach;?>
+                    </ul>
                 </div>
 
                 <div class="s-12 m-10 l-10 margin-m-bottom-30">

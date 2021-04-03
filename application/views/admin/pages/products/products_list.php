@@ -5,19 +5,17 @@
       <!-- Breadcrumb-->
      <div class="row pt-2 pb-2">
         <div class="col-sm-9">
-		    <h4 class="page-title">Service List</h4>
+		    <h4 class="page-title">Products List</h4>
 		    <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="<?php echo base_url();?>dashboard">Dashboard</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Service List</li>
+            <li class="breadcrumb-item active" aria-current="page">Products List</li>
          </ol>
 	   </div>
        
 	   <div class="col-sm-3">
             <div class="btn-group float-sm-right">
-                <!-- <a href="<?php echo base_url();?>product-purchese-list" class="btn btn-outline-primary waves-effect waves-light"> Product List</a> -->
-                <a href="<?php echo base_url();?>services" class="btn btn-outline-primary waves-effect waves-light" >  Refresh </a>
-                <!-- <a href="<?php echo base_url();?>services-add" class="btn btn-outline-primary waves-effect waves-light" >  Service Add </a> -->
-            
+                <a href="<?php echo base_url();?>products-list" class="btn btn-outline-primary waves-effect waves-light" >  Refresh </a>
+                <a href="<?php echo base_url();?>products-add" class="btn btn-outline-primary waves-effect waves-light" >  Produtcs Add </a>
             </div>
         </div>
 
@@ -57,13 +55,13 @@
                 <tbody>
                     <?php
                         $i = 0;
-                        foreach($serviceList as $value):
+                        foreach($productsList as $value):
                         $i++;
                     ?>
                     <tr>
                         <td><?php echo $i;?></td>
-                        <td><img src="<?php echo base_url().$value->service_image;?>" style="height: 80px;" /></td>
-                        <td><?php echo $value->title;?></td>
+                        <td><img src="<?php echo base_url().$value->product_image;?>" style="height: 80px;" /></td>
+                        <td><?php echo $value->product_name;?></td>
                         <td><?php echo $value->details;?></td>
                         <td>
                             
@@ -78,8 +76,8 @@
                         </td>
                         <td>
                             <div class="btn-group m-1">
-                                <a href="<?php echo base_url();?>edit-service/<?php echo $value->id?>" class="btn btn-primary waves-effect waves-light"> <i class="fa fa-edit"></i> </a>
-                                <!-- <a href="<?php echo base_url();?>delete-status-service/<?php echo $value->id?>" class="btn btn-primary waves-effect waves-light"> <i class="fa fa-trash"></i> </a> -->
+                                <a href="<?php echo base_url();?>edit-product/<?php echo $value->id?>" class="btn btn-primary waves-effect waves-light"> <i class="fa fa-edit"></i> </a>
+                                <a href="<?php echo base_url();?>delete-status-product/<?php echo $value->id?>" class="btn btn-primary waves-effect waves-light"> <i class="fa fa-trash"></i> </a>
                             </div>
                         </td>
                     </tr>

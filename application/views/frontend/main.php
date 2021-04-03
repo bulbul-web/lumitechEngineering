@@ -59,15 +59,15 @@
         <div class="line">
             <div class="margin">
             <?php 
-                $service_result = $this->db->query("SELECT * FROM tbl_services WHERE status = 1 ORDER BY id DESC")->result();
-                foreach($service_result as $service):
+                $project_result = $this->db->query("SELECT * FROM tbl_projects WHERE status = 1 ORDER BY id DESC")->result();
+                foreach($project_result as $project):
             ?>
                 <div class="s-6 m-6 l-3 margin-m-bottom project-ara">
-                    <img class="margin-bottom" src="<?php echo base_url().$service->service_image;?>" alt="">
+                    <img class="margin-bottom" src="<?php echo base_url().$project->project_image;?>" alt="">
                     <div class="text-center">
-                        <h2 class="text-thin"><?php echo $service->title;?></h2>
-                        <p><?php echo $service->details;?></p> 
-                        <a class="text-more-info text-primary-hover" href="<?php echo base_url().'service-details-page/'.$service->id;?>">Read more</a>                
+                        <h2 class="text-thin"><?php echo $project->title;?></h2>
+                        <p><?php echo $project->details;?></p> 
+                        <a class="text-more-info text-primary-hover" href="<?php echo base_url().'project-details/'.$project->id;?>">Read more</a>                
                     </div>
                 </div>
             <?php endforeach;?>

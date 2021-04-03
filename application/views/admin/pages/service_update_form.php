@@ -48,9 +48,10 @@
                             <div class="form-group">
                                 <label for="email">Title:</label>
                                 <!-- <input type="text" name="title" class="form-control" value="<?php echo $serviceListSingle->title; ?>" > -->
+                                <input type="hidden" name="title" class="form-control" value="<?php echo $serviceListSingle->title; ?>" >
                                 <input type="hidden" name="id" class="form-control" value="<?php echo $serviceListSingle->id; ?>" >
                                 <!-- <?php echo form_error('title', '<div class="error">', '</div>'); ?> -->
-                                <select name="title" class="form-control">
+                                <select name="title" class="form-control" disabled="">
                                     <option value="Renewable energy" <?php if($serviceListSingle->title == "Renewable energy"): ?>selected<?php endif;?>>Renewable energy</option>
                                     <option value="LED Lights" <?php if($serviceListSingle->title == "LED Lights"): ?>selected<?php endif;?>>LED Lights</option>
                                     <option value="Chemical and dyes" <?php if($serviceListSingle->title == "Chemical and dyes"): ?>selected<?php endif;?>>Chemical and dyes</option>

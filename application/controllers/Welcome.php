@@ -92,12 +92,13 @@ class Welcome extends CI_Controller {
 		$this->load->view('indexHome', $data);
 	}
 	
-	public function productsPage($product_id)
+	public function productsPage($product_cat_id)
 	{
 		$data = array();
 		$cmny_id = 1;
 		$data['companyInfo'] = $this->query_model->company_info_single($cmny_id);
-		// $data['productListSingle'] = $this->query_model->product_list_single($product_id);
+		$data['allProducts'] = $this->query_model->all_products($product_cat_id);
+		$data['singleProductsInfo'] = $this->query_model->single_products_info($product_cat_id);
 		$data['title'] = 'Product Details';
 		$data['productsMenu'] = $this->load->view("frontend/productsMenu", $data, true);
 		$data['header'] = $this->load->view("frontend/header", $data, true);
@@ -106,12 +107,12 @@ class Welcome extends CI_Controller {
 		$this->load->view('indexHome', $data);
 	}
 
-	public function product_details($product_dtls_id)
+	public function product_details($product_id)
 	{
 		$data = array();
 		$cmny_id = 1;
 		$data['companyInfo'] = $this->query_model->company_info_single($cmny_id);
-		// $data['serviceListSingle'] = $this->query_model->service_list_single($service_id);
+		$data['productDetailsByProductID'] = $this->query_model->product_details_by_product_id($product_id);
 		$data['title'] = 'Service Details';
 		$data['productsMenu'] = $this->load->view("frontend/productsMenu", $data, true);
 		$data['header'] = $this->load->view("frontend/header", $data, true);

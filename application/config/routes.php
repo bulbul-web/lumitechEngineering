@@ -82,3 +82,18 @@ $route['services-add'] = 'services/services_add_form';
 $route['service-save'] = 'services/service_save';
 $route['edit-service/(:any)'] = 'services/edit_service_form/$1';
 $route['service-update'] = 'services/service_update';
+
+$route['project-list'] = 'projects/project_list';
+$route['project-add'] = 'projects/project_add';
+$route['project-save'] = 'projects/project_save';
+
+$route['products-category'] = 'products/products_category';
+$route['products-category-add'] = 'products/products_category_add';
+$route['products-category-save'] = 'products/products_category_save';
+$route['products-list'] = 'products/products_list';
+$route['products-add'] = 'products/products_add_form';
+$route['products-save'] = 'products/products_save';
+$route['get-product-category-by-serviceId/(:any)'] = 'products/get_product_category_by_serviceId/$1';
+$route['edit-product/(:any)'] = 'products/edit_product_form/$1';
+$route['delete-status-product/(:any)'] = 'products/delete_status_product/$1';
+$route['products-update'] = 'products/products_update';
