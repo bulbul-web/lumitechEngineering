@@ -35,9 +35,23 @@ class Welcome extends CI_Controller {
 		$data = array();
 		$cmny_id = 1;
 		$data['companyInfo'] = $this->query_model->company_info_single($cmny_id);
+		$data['allprojects'] = $this->query_model->project_list();
 		$data['title'] = 'Projects List';
 		$data['header'] = $this->load->view("frontend/header", $data, true);
 		$data['main'] = $this->load->view("frontend/projects", $data, true);
+		$data['footer'] = $this->load->view("frontend/footer", $data, true);
+		$this->load->view('indexHome', $data);
+	}
+	
+	public function all_news()
+	{
+		$data = array();
+		$cmny_id = 1;
+		$data['companyInfo'] = $this->query_model->company_info_single($cmny_id);
+		$data['newsList'] = $this->query_model->news_list();
+		$data['title'] = 'Projects List';
+		$data['header'] = $this->load->view("frontend/header", $data, true);
+		$data['main'] = $this->load->view("frontend/all_news", $data, true);
 		$data['footer'] = $this->load->view("frontend/footer", $data, true);
 		$this->load->view('indexHome', $data);
 	}
@@ -126,11 +140,25 @@ class Welcome extends CI_Controller {
 		$data = array();
 		$cmny_id = 1;
 		$data['companyInfo'] = $this->query_model->company_info_single($cmny_id);
-		// $data['serviceListSingle'] = $this->query_model->service_list_single($service_id);
+		$data['projectDetailsSingle'] = $this->query_model->project_details_single($project_id);
 		$data['title'] = 'Service Details';
 		$data['productsMenu'] = $this->load->view("frontend/productsMenu", $data, true);
 		$data['header'] = $this->load->view("frontend/header", $data, true);
 		$data['main'] = $this->load->view("frontend/project_details", $data, true);
+		$data['footer'] = $this->load->view("frontend/footer", $data, true);
+		$this->load->view('indexHome', $data);
+	}
+	
+	public function news_details($news_id)
+	{
+		$data = array();
+		$cmny_id = 1;
+		$data['companyInfo'] = $this->query_model->company_info_single($cmny_id);
+		$data['newsDetailsSingle'] = $this->query_model->news_details_single($news_id);
+		$data['title'] = 'Service Details';
+		$data['productsMenu'] = $this->load->view("frontend/productsMenu", $data, true);
+		$data['header'] = $this->load->view("frontend/header", $data, true);
+		$data['main'] = $this->load->view("frontend/news_details", $data, true);
 		$data['footer'] = $this->load->view("frontend/footer", $data, true);
 		$this->load->view('indexHome', $data);
 	}
@@ -147,6 +175,24 @@ class Welcome extends CI_Controller {
 		$data['main'] = $this->load->view("frontend/category_details", $data, true);
 		$data['footer'] = $this->load->view("frontend/footer", $data, true);
 		$this->load->view('indexHome', $data);
+	}
+
+	public function msge_send(){
+		$data['company_name'] = $this->input->post('company_name', TRUE);
+		$data['email'] = $this->input->post('email', TRUE);
+		$data['name'] = $this->input->post('name', TRUE);
+		$data['phone'] = $this->input->post('phone', TRUE);
+		$data['message'] = $this->input->post('message', TRUE);
+		$data['status'] = 0;
+
+		if($this->query_model->msge_send($data)){
+			$sdata = array();
+			$sdata['message'] = 'Recieved Message';
+			$this->session->set_userdata($sdata);
+			redirect('default_controller');
+		}else{
+			redirect('default_controller');
+		}
 	}
 
 }

@@ -51,6 +51,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 $route['default_controller'] = 'welcome';
 $route['all-projects'] = 'welcome/projects';
+$route['all-news'] = 'welcome/all_news';
 $route['about'] = 'welcome/about';
 $route['gallery'] = 'welcome/gallery';
 $route['contact'] = 'welcome/contact';
@@ -58,7 +59,9 @@ $route['service-details-page/(:any)'] = 'welcome/service_details_page/$1';
 $route['products/(:any)'] = 'welcome/productsPage/$1';
 $route['product-details/(:any)'] = 'welcome/product_details/$1';
 $route['project-details/(:any)'] = 'welcome/project_details/$1';
+$route['news-details/(:any)'] = 'welcome/news_details/$1';
 $route['category-details/(:any)'] = 'welcome/category_details/$1';
+$route['msge-send'] = 'welcome/msge_send';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
@@ -71,8 +74,10 @@ $route['slider'] = 'dashboard/slider';
 $route['slider-add'] = 'dashboard/slider_add_form';
 $route['slider-save'] = 'dashboard/slider_save';
 $route['delete-status-slider/(:any)'] = 'dashboard/delete_status_slider/$1';
+$route['msg-status-change/(:any)'] = 'dashboard/msg_status_change/$1';
 $route['edit-slider/(:any)'] = 'dashboard/edit_slider_form/$1';
 $route['slider-update'] = 'dashboard/slider_update';
+$route['msg-list'] = 'dashboard/msg_list';
 
 $route['company-info/(:any)'] = 'companyInfo/edit_company_profile/$1';
 $route['company-update'] = 'companyInfo/company_update';
@@ -86,6 +91,23 @@ $route['service-update'] = 'services/service_update';
 $route['project-list'] = 'projects/project_list';
 $route['project-add'] = 'projects/project_add';
 $route['project-save'] = 'projects/project_save';
+$route['edit-project/(:any)'] = 'projects/edit_project/$1';
+$route['project-update'] = 'projects/project_update';
+$route['delete-status-project/(:any)'] = 'projects/delete_status_project/$1';
+
+$route['news-list'] = 'news/news_list';
+$route['news-add'] = 'news/news_add';
+$route['news-save'] = 'news/news_save';
+$route['edit-news/(:any)'] = 'news/edit_news/$1';
+$route['news-update'] = 'news/news_update';
+$route['delete-status-news/(:any)'] = 'news/delete_status_news/$1';
+
+$route['client-list'] = 'client/client_list';
+$route['client-add'] = 'client/client_add';
+$route['client-save'] = 'client/client_save';
+$route['edit-client/(:any)'] = 'client/edit_client/$1';
+$route['client-update'] = 'client/client_update';
+$route['delete-status-client/(:any)'] = 'client/delete_status_client/$1';
 
 $route['products-category'] = 'products/products_category';
 $route['products-category-add'] = 'products/products_category_add';

@@ -4,7 +4,7 @@ jQuery(document).ready(function($) {
   owl.owlCarousel({
     nav: true,
     dots: true,
-    items: 1,
+    items: 2,
     loop: true,
     navText: ["&#xf007","&#xf006"],
     autoplay: true,

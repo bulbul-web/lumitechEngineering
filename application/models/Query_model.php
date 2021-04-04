@@ -24,6 +24,16 @@ class Query_model extends CI_Model {
         return $result;
     }
     
+    public function news_list(){
+        $result = $this->db->query("SELECT * FROM tbl_news WHERE NOT (delete_status <=> 'deleted')  ORDER BY id DESC")->result();
+        return $result;
+    }
+    
+    public function client_list(){
+        $result = $this->db->query("SELECT * FROM tbl_client WHERE NOT (delete_status <=> 'deleted')  ORDER BY id DESC")->result();
+        return $result;
+    }
+    
     public function all_products($product_cat_id){
         $result = $this->db->query("SELECT * FROM tbl_products WHERE NOT (delete_status <=> 'deleted') AND product_category_id = '$product_cat_id'  ORDER BY id DESC")->result();
         return $result;
@@ -53,6 +63,11 @@ class Query_model extends CI_Model {
         $result = $this->db->query("SELECT * FROM tbl_services  ORDER BY id DESC")->result();
         return $result;
     }
+    
+    public function msg_list(){
+        $result = $this->db->query("SELECT * FROM tbl_msg  ORDER BY id DESC")->result();
+        return $result;
+    }
 
     public function get_product_category_by_serviceId($serviceId){
         $result = $this->db->query("SELECT * FROM tbl_products_category WHERE service_id =  '$serviceId' ORDER BY id DESC")->result();
@@ -65,6 +80,18 @@ class Query_model extends CI_Model {
     
     public function project_save($data){
         $this->db->insert('tbl_projects', $data);
+    }
+    
+    public function news_save($data){
+        $this->db->insert('tbl_news', $data);
+    }
+    
+    public function client_save($data){
+        $this->db->insert('tbl_client', $data);
+    }
+    
+    public function msge_send($data){
+        $this->db->insert('tbl_msg', $data);
     }
     
     public function product_save($data){
@@ -91,6 +118,21 @@ class Query_model extends CI_Model {
     
     public function company_info_single($cmny_id){
         $result = $this->db->query("SELECT * FROM tbl_info Where id = '$cmny_id' ")->row();
+        return $result;
+    }
+    
+    public function project_details_single($project_id){
+        $result = $this->db->query("SELECT * FROM tbl_projects Where id = '$project_id' ")->row();
+        return $result;
+    }
+    
+    public function news_details_single($news_id){
+        $result = $this->db->query("SELECT * FROM tbl_news Where id = '$news_id' ")->row();
+        return $result;
+    }
+    
+    public function client_details_single($client_id){
+        $result = $this->db->query("SELECT * FROM tbl_client Where id = '$client_id' ")->row();
         return $result;
     }
 
@@ -135,6 +177,49 @@ class Query_model extends CI_Model {
         $this->db->where('id', $id);
         $this->db->update('tbl_products', $data);
     }
+    
+    public function update_project($img){
+        $data = array();
+        $id = $this->input->post('id', TRUE);
+        $data['title'] = $this->input->post('title', true);
+        $data['details'] = $this->input->post('details', true);
+        $data['status'] = $this->input->post('status', true);
+        $data['project_image'] = $img;
+
+        // print_r($data);
+        // exit();
+
+        $this->db->where('id', $id);
+        $this->db->update('tbl_projects', $data);
+    }
+    
+    public function update_news($img){
+        $data = array();
+        $id = $this->input->post('id', TRUE);
+        $data['title'] = $this->input->post('title', true);
+        $data['details'] = $this->input->post('details', true);
+        $data['status'] = $this->input->post('status', true);
+        $data['news_image'] = $img;
+
+        // print_r($data);
+        // exit();
+
+        $this->db->where('id', $id);
+        $this->db->update('tbl_news', $data);
+    }
+    
+    public function update_client($img){
+        $data = array();
+        $id = $this->input->post('id', TRUE);
+        $data['status'] = $this->input->post('status', true);
+        $data['client_image'] = $img;
+
+        // print_r($data);
+        // exit();
+
+        $this->db->where('id', $id);
+        $this->db->update('tbl_client', $data);
+    }
 
     public function update_company($img){
         $id = $this->input->post('id', true);
@@ -145,6 +230,8 @@ class Query_model extends CI_Model {
 		$data['email_2'] = $this->input->post('email_2', true);
 		$data['company_add_1'] = $this->input->post('company_add_1', true);
 		$data['company_add_2'] = $this->input->post('company_add_2', true);
+		$data['philosophy'] = $this->input->post('philosophy', true);
+		$data['about_company'] = $this->input->post('about_company', true);
 		$data['logo_header'] = $img['logo_img'];
 		$data['footer_img'] = $img['footer_img'];
 

@@ -5,18 +5,18 @@
       <!-- Breadcrumb-->
      <div class="row pt-2 pb-2">
         <div class="col-sm-9">
-		    <h4 class="page-title">Projects List</h4>
+		    <h4 class="page-title">news List</h4>
 		    <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="<?php echo base_url();?>dashboard">Dashboard</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Projects List</li>
+            <li class="breadcrumb-item active" aria-current="page">news List</li>
          </ol>
 	   </div>
        
 	   <div class="col-sm-3">
             <div class="btn-group float-sm-right">
                 <!-- <a href="<?php echo base_url();?>product-purchese-list" class="btn btn-outline-primary waves-effect waves-light"> Product List</a> -->
-                <a href="<?php echo base_url();?>project-list" class="btn btn-outline-primary waves-effect waves-light" >  Refresh </a>
-                <a href="<?php echo base_url();?>project-add" class="btn btn-outline-primary waves-effect waves-light" >  Project Add </a>
+                <a href="<?php echo base_url();?>news-list" class="btn btn-outline-primary waves-effect waves-light" >  Refresh </a>
+                <a href="<?php echo base_url();?>news-add" class="btn btn-outline-primary waves-effect waves-light" >  news Add </a>
             
             </div>
         </div>
@@ -57,12 +57,12 @@
                 <tbody>
                     <?php
                         $i = 0;
-                        foreach($projectList as $value):
+                        foreach($newsList as $value):
                         $i++;
                     ?>
                     <tr>
                         <td><?php echo $i;?></td>
-                        <td><img src="<?php echo base_url().$value->project_image;?>" style="height: 80px;" /></td>
+                        <td><img src="<?php echo base_url().$value->news_image;?>" style="height: 80px;" /></td>
                         <td><?php echo $value->title;?></td>
                         <td><?php echo $value->details;?></td>
                         <td>
@@ -78,8 +78,8 @@
                         </td>
                         <td>
                             <div class="btn-group m-1">
-                                <a href="<?php echo base_url();?>edit-project/<?php echo $value->id?>" class="btn btn-primary waves-effect waves-light"> <i class="fa fa-edit"></i> </a>
-                                <a href="<?php echo base_url();?>delete-status-project/<?php echo $value->id?>" class="btn btn-primary waves-effect waves-light"> <i class="fa fa-trash"></i> </a>
+                                <a href="<?php echo base_url();?>edit-news/<?php echo $value->id?>" class="btn btn-primary waves-effect waves-light"> <i class="fa fa-edit"></i> </a>
+                                <a href="<?php echo base_url();?>delete-status-news/<?php echo $value->id?>" class="btn btn-primary waves-effect waves-light"> <i class="fa fa-trash"></i> </a>
                             </div>
                         </td>
                     </tr>

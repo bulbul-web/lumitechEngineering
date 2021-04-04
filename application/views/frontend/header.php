@@ -50,7 +50,7 @@
                     <?php endforeach;?>
                 </ul>
             </li>
-            <li><a href="<?php base_url();?>gallery">Cateloge</a></li>
+            <li><a href="<?php base_url();?>gallery">Catalogue</a></li>
             <li><a href="<?php base_url();?>contact">Contact</a></li>
         </ul>
         </div>

@@ -5,19 +5,16 @@
       <!-- Breadcrumb-->
      <div class="row pt-2 pb-2">
         <div class="col-sm-9">
-		    <h4 class="page-title">Projects List</h4>
+		    <h4 class="page-title">Massege List</h4>
 		    <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="<?php echo base_url();?>dashboard">Dashboard</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Projects List</li>
+            <li class="breadcrumb-item active" aria-current="page">Massege List</li>
          </ol>
 	   </div>
        
 	   <div class="col-sm-3">
             <div class="btn-group float-sm-right">
-                <!-- <a href="<?php echo base_url();?>product-purchese-list" class="btn btn-outline-primary waves-effect waves-light"> Product List</a> -->
-                <a href="<?php echo base_url();?>project-list" class="btn btn-outline-primary waves-effect waves-light" >  Refresh </a>
-                <a href="<?php echo base_url();?>project-add" class="btn btn-outline-primary waves-effect waves-light" >  Project Add </a>
-            
+                <a href="<?php echo base_url();?>msg-list" class="btn btn-outline-primary waves-effect waves-light" >  Refresh </a>
             </div>
         </div>
 
@@ -47,9 +44,11 @@
                 <thead>
                     <tr>
                         <th>SL</th>
-                        <th>Image</th>
-                        <th>Title</th>
-                        <th>Description</th>
+                        <th>Name</th>
+                        <th>Company name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Message</th>
                         <th>Status</th>
                         <th>Action</th>
                     </tr>
@@ -57,29 +56,31 @@
                 <tbody>
                     <?php
                         $i = 0;
-                        foreach($projectList as $value):
+                        foreach($msgList as $value):
                         $i++;
                     ?>
                     <tr>
                         <td><?php echo $i;?></td>
-                        <td><img src="<?php echo base_url().$value->project_image;?>" style="height: 80px;" /></td>
-                        <td><?php echo $value->title;?></td>
-                        <td><?php echo $value->details;?></td>
+                        <td><?php echo $value->name;?></td>
+                        <td><?php echo $value->company_name;?></td>
+                        <td><?php echo $value->email;?></td>
+                        <td><?php echo $value->phone;?></td>
+                        <td><?php echo $value->message;?></td>
                         <td>
                             
                             <?php
                                 if($value->status == '1'){
-                                    echo '<span class="alert alert-success text-center">Active</span>';
+                                    echo '<span class="alert alert-success text-center">Seen</span>';
                                 }else{
-                                    echo '<span class="alert alert-danger text-center">Inactive</span>';
+                                    echo '<span class="alert alert-danger text-center">Unseen</span>';
                                 }
                             ?>
                             
                         </td>
                         <td>
                             <div class="btn-group m-1">
-                                <a href="<?php echo base_url();?>edit-project/<?php echo $value->id?>" class="btn btn-primary waves-effect waves-light"> <i class="fa fa-edit"></i> </a>
-                                <a href="<?php echo base_url();?>delete-status-project/<?php echo $value->id?>" class="btn btn-primary waves-effect waves-light"> <i class="fa fa-trash"></i> </a>
+                                <a href="<?php echo base_url();?>msg-status-change/<?php echo $value->id?>" class="btn btn-primary waves-effect waves-light"> <i class="fa fa-eye"></i> </a>
+                                <!-- <a href="<?php echo base_url();?>delete-status-service/<?php echo $value->id?>" class="btn btn-primary waves-effect waves-light"> <i class="fa fa-trash"></i> </a> -->
                             </div>
                         </td>
                     </tr>
@@ -88,9 +89,11 @@
                 <tfoot>
                     <tr>
                         <th>SL</th>
-                        <th>Image</th>
-                        <th>Title</th>
-                        <th>Description</th>
+                        <th>Name</th>
+                        <th>Company name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Message</th>
                         <th>Status</th>
                         <th>Action</th>
                     </tr>

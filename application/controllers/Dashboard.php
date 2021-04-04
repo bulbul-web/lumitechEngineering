@@ -48,6 +48,22 @@ class Dashboard extends CI_Controller {
 		$data['footer'] = $this->load->view("admin/include/footer", $data, true);
 		$this->load->view('admin/index', $data);
 	}
+	
+	public function msg_list()
+	{
+		$data = array();
+		$id = $this->session->userdata('user_id');
+        $data['userInfo'] = $this->users_model->user_info($id);
+		$data['msgList'] = $this->query_model->msg_list();
+		$data['title'] = 'Slider List';
+		$data['css'] = $this->load->view("admin/include/css", $data, true);
+		$data['js'] = $this->load->view("admin/include/js", $data, true);
+		$data['sidebar'] = $this->load->view("admin/include/sidebar", $data, true);
+		$data['header'] = $this->load->view("admin/include/header", $data, true);
+		$data['content'] = $this->load->view("admin/pages/msg_list", $data, true);
+		$data['footer'] = $this->load->view("admin/include/footer", $data, true);
+		$this->load->view('admin/index', $data);
+	}
 
 	public function slider_add_form(){
 		$data = array();
@@ -218,6 +234,16 @@ class Dashboard extends CI_Controller {
 		$sdata['message'] = 'Slider Deleted Successfully!';
 		$this->session->set_userdata($sdata);
 		$this->slider();
+	}
+	
+	public function msg_status_change($id){
+		$this->db->set('status', '1');
+        $this->db->where('id', $id);
+        $this->db->update('tbl_msg');
+		$sdata = array();
+		$sdata['message'] = 'Massege seen successfully';
+		$this->session->set_userdata($sdata);
+		$this->msg_list();
 	}
 
 

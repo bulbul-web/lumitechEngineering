@@ -79,6 +79,16 @@
                                 <input type="text" name="company_add_2" class="form-control" value="<?php echo $companyInfoSingle->company_add_2; ?>" >
                             </div>
                             
+                            <div class="form-group">
+                                <label for="email">Our Philosophy:</label>
+                                <input type="text" name="philosophy" class="form-control" value="<?php echo $companyInfoSingle->philosophy; ?>" >
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email">About Company:</label>
+                                <input type="text" name="about_company" class="form-control" value="<?php echo $companyInfoSingle->about_company; ?>" >
+                            </div>
+                            
                            
                             <div class="form-group">
                                 <label for="email">Header Logo:</label>

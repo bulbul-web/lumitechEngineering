@@ -36,6 +36,24 @@
         </a>
       </li>
       
+      <li>
+        <a href="<?php echo base_url();?>news-list" class="waves-effect">
+          <i class="fa fa-circle-o"></i> <span>News</span> 
+        </a>
+      </li>
+      
+      <li>
+        <a href="<?php echo base_url();?>client-list" class="waves-effect">
+          <i class="fa fa-circle-o"></i> <span>Clients</span> 
+        </a>
+      </li>
+
+      <li>
+        <a href="<?php echo base_url();?>msg-list" class="waves-effect">
+          <i class="fa fa-circle-o"></i> <span>Visitor Massege</span> 
+        </a>
+      </li>
+      
     </ul>
 	 
    </div>

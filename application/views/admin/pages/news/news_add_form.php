@@ -5,17 +5,17 @@
       <!-- Breadcrumb-->
      <div class="row pt-2 pb-2">
         <div class="col-sm-9">
-		    <h4 class="page-title">Proudcts Add</h4>
+		    <h4 class="page-title">news Add</h4>
 		    <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="<?php echo base_url();?>dashboard">Dashboard</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Products Add</li>
+            <li class="breadcrumb-item active" aria-current="page">news Add</li>
          </ol>
 	   </div>
        
 	   <div class="col-sm-3">
             <div class="btn-group float-sm-right">
-                <a href="<?php echo base_url();?>project-add" class="btn btn-outline-primary waves-effect waves-light" >  Refresh </a>
-                <a href="<?php echo base_url();?>project-list" class="btn btn-outline-primary waves-effect waves-light" >  Back </a>
+                <a href="<?php echo base_url();?>news-add" class="btn btn-outline-primary waves-effect waves-light" >  Refresh </a>
+                <a href="<?php echo base_url();?>news-list" class="btn btn-outline-primary waves-effect waves-light" >  Back </a>
             
             </div>
         </div>
@@ -25,7 +25,7 @@
       <div class="row">
         <div class="col-lg-12">
           <div class="card">
-             <div class="card-header text-uppercase">Project Add</div>
+             <div class="card-header text-uppercase">news Add</div>
              <div class="card-body">
              <div class="alert alert-danger text-center">
                         
@@ -39,7 +39,7 @@
 					?>
 				</div>
 			 
-             <form name="project-save" id="projectSave" action="<?php echo base_url();?>project-save" method="post" enctype="multipart/form-data">
+             <form name="news-save" id="newsSave" action="<?php echo base_url();?>news-save" method="post" enctype="multipart/form-data">
                     
                     <div class="row">
                         <div class="col-md-12">
@@ -53,15 +53,15 @@
                             </div>
                             
                             <div class="form-group">
-                                <label for="email">Project Details:</label>
+                                <label for="email">news Details:</label>
                                 <textarea id="editor" name="details" class="form-control" required=""><?php echo set_value('details'); ?></textarea>
                                 <?php echo form_error('details', '<div class="error">', '</div>'); ?>
                             </div>
                             
                             <div class="form-group">
-                                <label for="email">Project Image:</label>
-                                <input type="file" name="project_image" class="form-control" value="" >
-                                <?php echo form_error('project_image', '<div class="error">', '</div>'); ?>
+                                <label for="email">news Image:</label>
+                                <input type="file" name="news_image" class="form-control" value="" >
+                                <?php echo form_error('news_image', '<div class="error">', '</div>'); ?>
                                 <span class="alert alert-danger text-center">Image size will be (768 x 450)</span>
                             </div>
 

@@ -1992,3 +1992,11 @@ ul.products-ul li:hover{
 .min-height-400px{
   min-height: 400px;
 }
+.project-list-img{
+    border-radius: 50%;
+    border: 1px solid green;
+    height: 200px;
+    width: 200px;
+    text-align: center;
+    margin: 0 auto;
+}

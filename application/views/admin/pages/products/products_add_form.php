@@ -69,7 +69,7 @@
                             
                             <div class="form-group">
                                 <label for="email">Product Details:</label>
-                                <textarea id="editor" name="details" class="form-control"></textarea>
+                                <textarea id="editor" name="details" class="form-control"><?php echo set_value('details'); ?></textarea>
                             </div>
                             
                             <div class="form-group">

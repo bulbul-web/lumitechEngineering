@@ -1,3 +1,4 @@
+
 <!-- MAIN -->
 <main role="main">
     <!-- Main Carousel -->
@@ -29,6 +30,19 @@
         </div>  
     </div>
     </section>
+
+    <center>
+        <font style="color: green; font-weight: bold;">
+            <?php
+                $message = $this->session->userdata('message');
+                //echo $message;
+                if (isset($message)) {
+                    echo $message;
+                    $this->session->unset_userdata('message');
+                }
+            ?>
+        </font>
+    </center>
     
     <!-- Section 1 -->
     <section class="section section-services background-white"> 
@@ -107,106 +121,34 @@
     <!-- Section 4 --> 
     <section class="section background-white">
     <div class="line">
-        <h2 class="text-thin headline text-center text-s-size-30 margin-bottom-50">From Our <span class="text-primary">NEWS</span></h2>
+        <h2 class="text-thin headline text-center text-s-size-30 margin-bottom-50">From Our <span class="text-primary"><a href="<?php echo base_url().'all-news';?>">NEWS</a></span></h2>
         <div class="carousel-default owl-carousel carousel-wide-arrows">
-        <div class="item">
-            <div class="margin"> 
-            <div class="s-12 m-12 l-6">
-                <div class="image-border-radius margin-m-bottom">
-                <div class="margin">
-                    <div class="s-12 m-12 l-4 margin-m-bottom">
-                    <a class="image-hover-zoom" href="/"><img src="<?php echo base_url();?>assets/frontend/img/blog-05.jpg" alt=""></a>
-                    </div>
-                    <div class="s-12 m-12 l-8 margin-m-bottom">
-                    <h3><a class="text-dark text-primary-hover" href="/">Lorem Ipsum Dolor sit Amet</a></h3>
-                    <p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat.</p>
-                    <a class="text-more-info text-primary-hover" href="/">Read more</a>
-                    </div>
-                </div>  
-                </div>
-            </div>
-            <div class="s-12 m-12 l-6">
-                <div class="image-border-radius">
-                <div class="margin">
-                    <div class="s-12 m-12 l-4 margin-m-bottom">
-                    <a class="image-hover-zoom" href="/"><img src="<?php echo base_url();?>assets/frontend/img/blog-03.jpg" alt=""></a>
-                    </div>
-                    <div class="s-12 m-12 l-8">
-                    <h3><a class="text-dark text-primary-hover" href="/">Lorem Ipsum Dolor sit Amet</a></h3>
-                    <p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat.</p>
-                    <a class="text-more-info text-primary-hover" href="/">Read more</a>
-                    </div>
-                </div>  
-                </div>
-            </div> 
-            </div>
-        </div>
 
-        <div class="item"> 
-            <div class="margin"> 
-            <div class="s-12 m-12 l-6">
-                <div class="image-border-radius margin-m-bottom">
+        <?php 
+            $news_result = $this->db->query("SELECT * FROM tbl_news WHERE status = 1 ORDER BY id DESC")->result();
+            foreach($news_result as $news):
+        ?>            
+            <div class="item"> 
                 <div class="margin">
-                    <div class="s-12 m-12 l-4 margin-m-bottom">
-                    <a class="image-hover-zoom" href="/"><img src="<?php echo base_url();?>assets/frontend/img/blog-06.jpg" alt=""></a>
-                    </div>
-                    <div class="s-12 m-12 l-8 margin-m-bottom">
-                    <h3><a class="text-dark text-primary-hover" href="/">Lorem Ipsum Dolor sit Amet</a></h3>
-                    <p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat.</p>
-                    <a class="text-more-info text-primary-hover" href="/">Read more</a>
-                    </div>
-                </div>  
+                    <div class="s-12 m-12 l-12">
+                        <div class="image-border-radius">
+                            <div class="margin">
+                                <div class="s-12 m-12 l-4 margin-m-bottom">
+                                    <a class="image-hover-zoom" href="#"><img src="<?php echo base_url().$news->news_image;?>" alt=""></a>
+                                </div>
+                                <div class="s-12 m-12 l-8">
+                                    <h3><a class="text-dark text-primary-hover" href="<?php echo base_url().'news-details/'.$news->id?>"><?php echo $news->title;?></a></h3>
+                                    <p><?php echo $news->details;?></p>
+                                    <a class="text-more-info text-primary-hover" href="<?php echo base_url().'news-details/'.$news->id?>">Read more</a>
+                                </div>
+                            </div>  
+                        </div>
+                    </div> 
                 </div>
             </div>
-            <div class="s-12 m-12 l-6">
-                <div class="image-border-radius">
-                <div class="margin">
-                    <div class="s-12 m-12 l-4 margin-m-bottom">
-                    <a class="image-hover-zoom" href="/"><img src="<?php echo base_url();?>assets/frontend/img/blog-02.jpg" alt=""></a>
-                    </div>
-                    <div class="s-12 m-12 l-8">
-                    <h3><a class="text-dark text-primary-hover" href="/">Lorem Ipsum Dolor sit Amet</a></h3>
-                    <p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat.</p>
-                    <a class="text-more-info text-primary-hover" href="/">Read more</a>
-                    </div>
-                </div>  
-                </div>
-            </div> 
-            </div>
-        </div>
-
-        <div class="item">
-            <div class="margin"> 
-            <div class="s-12 m-12 l-6">
-                <div class="image-border-radius margin-m-bottom">
-                <div class="margin">
-                    <div class="s-12 m-12 l-4 margin-m-bottom">
-                    <a class="image-hover-zoom" href="/"><img src="<?php echo base_url();?>assets/frontend/img/blog-01.jpg" alt=""></a>
-                    </div>
-                    <div class="s-12 m-12 l-8 margin-m-bottom">
-                    <h3><a class="text-dark text-primary-hover" href="/">Lorem Ipsum Dolor sit Amet</a></h3>
-                    <p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat.</p>
-                    <a class="text-more-info text-primary-hover" href="/">Read more</a>
-                    </div>
-                </div>  
-                </div>
-            </div>
-            <div class="s-12 m-12 l-6">
-                <div class="image-border-radius">
-                <div class="margin">
-                    <div class="s-12 m-12 l-4 margin-m-bottom">
-                    <a class="image-hover-zoom" href="/"><img src="<?php echo base_url();?>assets/frontend/img/blog-06.jpg" alt=""></a>
-                    </div>
-                    <div class="s-12 m-12 l-8">
-                    <h3><a class="text-dark text-primary-hover" href="/">Lorem Ipsum Dolor sit Amet</a></h3>
-                    <p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat.</p>
-                    <a class="text-more-info text-primary-hover" href="/">Read more</a>
-                    </div>
-                </div>  
-                </div>
-            </div> 
-            </div>
-        </div>
+        
+        <?php endforeach;?>
+        
         </div>
     </div>    
     </section>
@@ -218,53 +160,18 @@
         <h2 class="text-thin headline text-center text-s-size-30 margin-bottom-50">Our Valid <span class="text-primary">Clients</span></h2>
         <div class="carousel-client owl-carousel carousel-wide-arrows">
         
-        
-        <div class="item"> 
-            <div class="s-6 m-4 l-12 margin-m-bottom">
-                <a class="image-hover-zoom" href="/"><img src="<?php echo base_url();?>assets/frontend/img/blog-06.jpg" alt=""></a>
+        <?php 
+            $client_result = $this->db->query("SELECT * FROM tbl_client WHERE status = 1 ORDER BY id DESC")->result();
+            foreach($client_result as $client):
+        ?> 
+            <div class="item"> 
+                <div class="s-6 m-4 l-12 margin-m-bottom">
+                    <a class="image-hover-zoom" href="#"><img src="<?php echo base_url().$client->client_image;?>" alt=""></a>
+                </div>
             </div>
-        </div>
-
-        <div class="item"> 
-            <div class="s-6 m-4 l-12 margin-m-bottom">
-                <a class="image-hover-zoom" href="/"><img src="<?php echo base_url();?>assets/frontend/img/blog-06.jpg" alt=""></a>
-            </div>
-        </div>
-
-        <div class="item"> 
-            <div class="s-6 m-4 l-12 margin-m-bottom">
-                <a class="image-hover-zoom" href="/"><img src="<?php echo base_url();?>assets/frontend/img/blog-06.jpg" alt=""></a>
-            </div>
-        </div>
-
-        <div class="item"> 
-            <div class="s-6 m-4 l-12 margin-m-bottom">
-                <a class="image-hover-zoom" href="/"><img src="<?php echo base_url();?>assets/frontend/img/blog-06.jpg" alt=""></a>
-            </div>
-        </div>
-        
-        <div class="item"> 
-            <div class="s-6 m-4 l-12 margin-m-bottom">
-                <a class="image-hover-zoom" href="/"><img src="<?php echo base_url();?>assets/frontend/img/blog-06.jpg" alt=""></a>
-            </div>
-        </div>
-
-        <div class="item"> 
-            <div class="s-6 m-4 l-12 margin-m-bottom">
-                <a class="image-hover-zoom" href="/"><img src="<?php echo base_url();?>assets/frontend/img/blog-06.jpg" alt=""></a>
-            </div>
-        </div>
-
-        <div class="item"> 
-            <div class="s-6 m-4 l-12 margin-m-bottom">
-                <a class="image-hover-zoom" href="/"><img src="<?php echo base_url();?>assets/frontend/img/blog-06.jpg" alt=""></a>
-            </div>
-        </div>
-
+        <?php endforeach;?>
 
         
-        
-
         </div>
     </div>    
     </section>
