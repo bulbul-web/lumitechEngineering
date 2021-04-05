@@ -57,6 +57,11 @@
                                 <textarea id="editor" name="details" class="form-control" required=""><?php echo $projectDetailsSingle->details;?></textarea>
                                 <?php echo form_error('details', '<div class="error">', '</div>'); ?>
                             </div>
+							
+							<div class="form-group">
+                                <label for="email">Long Details:</label>
+                                <textarea name="details_long" class="form-control" required=""><?php echo $projectDetailsSingle->details_long;?></textarea>
+                            </div>
                             
                             <div class="form-group">
                                 <label for="email">Project Image:</label>
@@ -103,5 +108,9 @@
 
 <script>
     document.forms['project-update'].elements['status'].value=<?php echo $projectDetailsSingle->status; ?>;
+</script>
+<script src="https://cdn.ckeditor.com/4.16.0/standard/ckeditor.js"></script>
+<script>
+        CKEDITOR.replace( 'details_long' );
 </script>
    

@@ -29,6 +29,11 @@ class Query_model extends CI_Model {
         return $result;
     }
     
+    public function catalogue_list(){
+        $result = $this->db->query("SELECT * FROM tbl_catalogue WHERE NOT (delete_status <=> 'deleted')  ORDER BY id DESC")->result();
+        return $result;
+    }
+    
     public function client_list(){
         $result = $this->db->query("SELECT * FROM tbl_client WHERE NOT (delete_status <=> 'deleted')  ORDER BY id DESC")->result();
         return $result;
@@ -55,7 +60,7 @@ class Query_model extends CI_Model {
     }
     
     public function products_category_list(){
-        $result = $this->db->query("SELECT * FROM tbl_products_category  ORDER BY id DESC")->result();
+        $result = $this->db->query("SELECT * FROM tbl_products_category WHERE NOT (delete_status <=> 'deleted') ORDER BY id DESC")->result();
         return $result;
     }
     
@@ -84,6 +89,10 @@ class Query_model extends CI_Model {
     
     public function news_save($data){
         $this->db->insert('tbl_news', $data);
+    }
+    
+    public function catalogue_save($data){
+        $this->db->insert('tbl_catalogue', $data);
     }
     
     public function client_save($data){
@@ -131,9 +140,25 @@ class Query_model extends CI_Model {
         return $result;
     }
     
+    public function category_single($produc_cat_id){
+        $result = $this->db->query("SELECT * FROM tbl_products_category Where id = '$produc_cat_id' ")->row();
+        return $result;
+    }
+    
+    public function catalogue_details_single($catalogue_id){
+        $result = $this->db->query("SELECT * FROM tbl_catalogue Where id = '$catalogue_id' ")->row();
+        return $result;
+    }
+    
     public function client_details_single($client_id){
         $result = $this->db->query("SELECT * FROM tbl_client Where id = '$client_id' ")->row();
         return $result;
+    }
+
+    public function products_category_update($data){
+        $id = $this->input->post('id', true);
+        $this->db->where('id', $id);
+        $this->db->update('tbl_products_category', $data);
     }
 
     public function update_slider($img){
@@ -154,6 +179,7 @@ class Query_model extends CI_Model {
         $id = $this->input->post('id', TRUE);
         $data['title'] = $this->input->post('title', true);
         $data['details'] = $this->input->post('details', true);
+		$data['details_long'] = $this->input->post('details_long', true);
         $data['status'] = $this->input->post('status', true);
         $data['service_image'] = $img;
 
@@ -168,6 +194,7 @@ class Query_model extends CI_Model {
         $data['product_category_id'] = $this->input->post('product_category_id', true);
         $data['product_name'] = $this->input->post('product_name', true);
         $data['details'] = $this->input->post('details', true);
+		$data['details_long'] = $this->input->post('details_long', true);
         $data['status'] = $this->input->post('status', true);
         $data['product_image'] = $img;
 
@@ -183,6 +210,7 @@ class Query_model extends CI_Model {
         $id = $this->input->post('id', TRUE);
         $data['title'] = $this->input->post('title', true);
         $data['details'] = $this->input->post('details', true);
+		$data['details_long'] = $this->input->post('details_long', true);
         $data['status'] = $this->input->post('status', true);
         $data['project_image'] = $img;
 
@@ -198,6 +226,7 @@ class Query_model extends CI_Model {
         $id = $this->input->post('id', TRUE);
         $data['title'] = $this->input->post('title', true);
         $data['details'] = $this->input->post('details', true);
+		$data['details_long'] = $this->input->post('details_long', true);
         $data['status'] = $this->input->post('status', true);
         $data['news_image'] = $img;
 
@@ -206,6 +235,22 @@ class Query_model extends CI_Model {
 
         $this->db->where('id', $id);
         $this->db->update('tbl_news', $data);
+    }
+    
+    public function update_catalogue($img){
+        $data = array();
+        $id = $this->input->post('id', TRUE);
+        $data['title'] = $this->input->post('title', true);
+        $data['details'] = $this->input->post('details', true);
+        $data['details_long'] = $this->input->post('details_long', true);
+        $data['status'] = $this->input->post('status', true);
+        $data['catalogue_image'] = $img;
+
+        // print_r($data);
+        // exit();
+
+        $this->db->where('id', $id);
+        $this->db->update('tbl_catalogue', $data);
     }
     
     public function update_client($img){

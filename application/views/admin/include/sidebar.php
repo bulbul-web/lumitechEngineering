@@ -54,6 +54,12 @@
         </a>
       </li>
       
+      <li>
+        <a href="<?php echo base_url();?>catalogue-list" class="waves-effect">
+          <i class="fa fa-circle-o"></i> <span>Catalogue</span> 
+        </a>
+      </li>
+      
     </ul>
 	 
    </div>

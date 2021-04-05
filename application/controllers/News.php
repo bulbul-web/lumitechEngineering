@@ -92,6 +92,7 @@ class News extends CI_Controller {
 								$img = '/assets/frontend/img/' . $result['upload_data']['file_name'];
 								$data['title'] = $this->input->post('title', true);
 								$data['details'] = $this->input->post('details', true);
+								$data['details_long'] = $this->input->post('details_long', true);
 								$data['status'] = '1';
 								$data['news_image'] = $img;
 

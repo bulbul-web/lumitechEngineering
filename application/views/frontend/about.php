@@ -3,11 +3,11 @@
     <!-- Content -->
     <article>
     <header class="section background-primary text-center">
-        <h1 class="text-white margin-bottom-0 text-size-50 text-thin text-line-height-1">Sample Page</h1>
+        <h1 class="text-white margin-bottom-0 text-size-50 text-thin text-line-height-1">About US</h1>
     </header>
     <div class="section background-white"> 
         <div class="line">
-        <h2 class="text-size-30">Investigationes demonstraverunt lectores</h2>
+        <h2 class="text-size-30">Our Goal</h2>
         <p>
         Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. 
         Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. 
@@ -27,7 +27,7 @@
         <div class="line">
             <div class="margin">
             <div class="s-12 m-12 l-6 margin-m-bottom-30">
-                <h2>Mirum est notare quam littera gothica</h2>
+                <h2>Our Mission</h2>
                 <p>
                 Typi non habent claritatem insitam est usus legentis in iis qui facit eorum claritatem. 
                 Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. 
@@ -35,7 +35,7 @@
                 </p>
             </div>
             <div class="s-12 m-12 l-6">
-                <h2>Claritas est etiam processus dynamicus</h2>
+                <h2>Our vission</h2>
                 <p>
                 Typi non habent claritatem insitam est usus legentis in iis qui facit eorum claritatem. 
                 Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. 

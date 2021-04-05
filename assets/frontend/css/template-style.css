@@ -2000,3 +2000,21 @@ ul.products-ul li:hover{
     text-align: center;
     margin: 0 auto;
 }
+.border-1 .image-with-hover-overlay{
+  border: 1px solid green;
+  padding: 2px;
+  min-height: 300px;
+}
+.border-1 .image-with-hover-overlay .cat-download-link img{
+  width: 100px;
+  margin: 0 auto;
+  padding: 10px;
+  height: 100px;
+  margin-bottom: 20px;
+}
+
+.border-1 .image-with-hover-overlay .cat-image-main{
+  width: 250px;
+  margin: 0 auto;
+  padding: 5px;
+}

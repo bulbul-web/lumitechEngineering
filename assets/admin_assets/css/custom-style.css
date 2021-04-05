@@ -30,3 +30,7 @@ table.table-bordered.dataTable tbody th, table.table-bordered.dataTable tbody td
 a.timesSpan{
     color: white!important;
 }
+.cat-download-link i{
+    font-size: 48px;
+    color: green;
+  }

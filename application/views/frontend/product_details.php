@@ -41,6 +41,9 @@
                     <p>
                         <?php echo $productDetailsByProductID->details;?>
                     </p> 
+					<div>
+                        <?php echo $productDetailsByProductID->details_long;?>
+                    </div>
                     
                     
                 </div>

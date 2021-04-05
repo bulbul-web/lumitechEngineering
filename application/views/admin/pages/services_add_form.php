@@ -63,6 +63,11 @@
                                 <input type="text" name="details" class="form-control" value="<?php echo set_value('details'); ?>" >
                                 <?php echo form_error('details', '<div class="error">', '</div>'); ?>
                             </div>
+							
+							<div class="form-group">
+                                <label for="email">Long Details:</label>
+                                <textarea name="details_long" class="form-control" required=""><?php echo set_value('details_long'); ?></textarea>
+                            </div>
                             
                             <div class="form-group">
                                 <label for="email">Service Image:</label>
@@ -94,4 +99,8 @@
     <!-- End container-fluid-->
     
     </div><!--End content-wrapper-->
+	<script src="https://cdn.ckeditor.com/4.16.0/standard/ckeditor.js"></script>
+    <script>
+            CKEDITOR.replace( 'details_long' );
+    </script>
    

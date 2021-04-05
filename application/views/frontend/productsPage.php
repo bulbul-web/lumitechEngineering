@@ -23,7 +23,7 @@
                     ?> -->
                     <ul class="products-ul">
                         <?php
-                            $producstMenu = $this->db->query("SELECT * FROM tbl_products_category WHERE service_id = '$singleProductsInfo->service_id' ")->result();
+                            $producstMenu = $this->db->query("SELECT * FROM tbl_products_category WHERE service_id = '$singleProductsInfo->service_id' AND NOT (status <=> '0') ")->result();
                             foreach ($producstMenu as $productCat): 
                         ?>
                             <li><a href="<?php echo base_url().'products/'.$productCat->id;?>"><?php echo $productCat->category_name?></a></li>
@@ -40,7 +40,7 @@
                                 <div class="padding-2x custom-padding-2x block-bordered border-radius">
                                 <img src="<?php echo base_url().$productByCatID->product_image;?>" />
                                 <h2 class="text-thin"><?php echo $productByCatID->product_name;?></h2>
-                                <p class="margin-bottom-30"><?php echo $productByCatID->details;?></p>
+                                <p class="margin-bottom-30"><?php echo substr($productByCatID->details, 0, 50);?></p>
                                 <a class="button border-radius background-primary text-size-12 text-white text-strong" href="<?php echo base_url().'product-details/'.$productByCatID->id;?>">GET MORE INFO</a>
                                 </div>
                             </div>

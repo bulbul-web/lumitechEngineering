@@ -15,7 +15,7 @@
                       <div class="padding-2x custom-padding-2x block-bordered border-radius">
                       <img class="project-list-img" src="<?php echo base_url().$projects->project_image;?>" />
                       <h2 class="text-thin"><?php echo $projects->title;?></h2>
-                      <p class="margin-bottom-30"><?php echo $projects->details;?></p>
+                      <p class="margin-bottom-30"><?php echo substr($projects->details, 0, 50);?></p>
                       <a class="button border-radius background-primary text-size-12 text-white text-strong" href="<?php echo base_url().'project-details/'.$projects->id;?>">GET MORE INFO</a>
                       </div>
                   </div>

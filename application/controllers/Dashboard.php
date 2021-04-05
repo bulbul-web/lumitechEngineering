@@ -236,8 +236,12 @@ class Dashboard extends CI_Controller {
 		$this->slider();
 	}
 	
-	public function msg_status_change($id){
-		$this->db->set('status', '1');
+	public function msg_status_change($id, $staus){
+		if($staus == 0):
+			$this->db->set('status', '1');
+		elseif($staus == 1):
+			$this->db->set('status', '0');
+		endif;
         $this->db->where('id', $id);
         $this->db->update('tbl_msg');
 		$sdata = array();

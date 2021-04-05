@@ -79,8 +79,12 @@
                         </td>
                         <td>
                             <div class="btn-group m-1">
-                                <a href="<?php echo base_url();?>msg-status-change/<?php echo $value->id?>" class="btn btn-primary waves-effect waves-light"> <i class="fa fa-eye"></i> </a>
-                                <!-- <a href="<?php echo base_url();?>delete-status-service/<?php echo $value->id?>" class="btn btn-primary waves-effect waves-light"> <i class="fa fa-trash"></i> </a> -->
+                                
+                                <?php if($value->status == '1'): ?>
+                                    <a href="<?php echo base_url();?>msg-status-change/<?php echo $value->id.'/'.$value->status;?>" class="btn btn-primary waves-effect waves-light"> <i class="fa fa-eye-slash"></i> </a>
+                                <?php elseif ($value->status == '0'): ?>
+                                    <a href="<?php echo base_url();?>msg-status-change/<?php echo $value->id.'/'.$value->status;?>" class="btn btn-primary waves-effect waves-light"> <i class="fa fa-eye"></i> </a>
+                                <?php endif;?>
                             </div>
                         </td>
                     </tr>

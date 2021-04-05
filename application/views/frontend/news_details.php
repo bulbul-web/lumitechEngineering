@@ -24,6 +24,9 @@
                     <p>
                         <?php echo $newsDetailsSingle->details;?>
                     </p> 
+					<div>
+                        <?php echo $newsDetailsSingle->details_long;?>
+                    </div>
                     
                     
                 </div>

@@ -48,6 +48,8 @@
                         <th>SL</th>
                         <th>Service Category</th>
                         <th>Products Category</th>
+                        <th>Status</th>
+                        <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -65,6 +67,23 @@
                             ?>
                         </td>
                         <td><?php echo $value->category_name;?></td>
+                        <td>
+                            
+                            <?php
+                                if($value->status == '1'){
+                                    echo '<span class="alert alert-success text-center">Active</span>';
+                                }else{
+                                    echo '<span class="alert alert-danger text-center">Inactive</span>';
+                                }
+                            ?>
+                            
+                        </td>
+                        <td>
+                            <div class="btn-group m-1">
+                                <a href="<?php echo base_url();?>edit-product-category/<?php echo $value->id?>" class="btn btn-primary waves-effect waves-light"> <i class="fa fa-edit"></i> </a>
+                                <a href="<?php echo base_url();?>delete-status-product-category/<?php echo $value->id?>" class="btn btn-primary waves-effect waves-light"> <i class="fa fa-trash"></i> </a>
+                            </div>
+                        </td>
                     </tr>
                     <?php endforeach;?>
                 </tbody>
@@ -73,6 +92,8 @@
                         <th>SL</th>
                         <th>Service Category</th>
                         <th>Products Category</th>
+                        <th>Status</th>
+                        <th>Action</th>
                     </tr>
                 </tfoot>
             </table>

@@ -62,6 +62,21 @@ class Products extends CI_Controller {
 		$data['footer'] = $this->load->view("admin/include/footer", $data, true);
 		$this->load->view('admin/index', $data);
     }
+    
+	public function edit_product_category_form($produc_cat_id){
+        $data = array();
+		$id = $this->session->userdata('user_id');
+		$data['CategoryListSingle'] = $this->query_model->category_single($produc_cat_id);
+        $data['userInfo'] = $this->users_model->user_info($id);
+		$data['title'] = 'Products Category Add';
+		$data['css'] = $this->load->view("admin/include/css", $data, true);
+		$data['js'] = $this->load->view("admin/include/js", $data, true);
+		$data['sidebar'] = $this->load->view("admin/include/sidebar", $data, true);
+		$data['header'] = $this->load->view("admin/include/header", $data, true);
+		$data['content'] = $this->load->view("admin/pages/products/edit_product_category_form", $data, true);
+		$data['footer'] = $this->load->view("admin/include/footer", $data, true);
+		$this->load->view('admin/index', $data);
+    }
 
     public function products_add_form(){
         $data = array();
@@ -109,6 +124,7 @@ class Products extends CI_Controller {
         if($this->form_validation->run()){
             $data['service_id'] = $this->input->post('service_id', true);
             $data['category_name'] = $this->input->post('category_name', true);
+            $data['status'] = 1;
             $this->query_model->products_category_save($data);
             $sdata = array();
             $sdata['message'] = 'Products category successfully save';
@@ -119,6 +135,35 @@ class Products extends CI_Controller {
             $sdata['message'] = 'Try again';
             $this->session->set_userdata($sdata);
             $this->products_category_add();
+        }
+        
+
+    }
+
+    public function products_category_update(){
+		$produc_cat_id = $this->input->post('id', TRUE);
+        $this->form_validation->set_rules('service_id', 'Service Category', 'required|min_length[1]|max_length[250]');
+        $this->form_validation->set_rules(
+            'category_name', 'Products Category',
+            'required|min_length[1]|max_length[250]',
+            array(
+                'required'      =>  'You have not provide %s.'
+            )
+        );
+        if($this->form_validation->run()){
+            $data['service_id'] = $this->input->post('service_id', true);
+            $data['category_name'] = $this->input->post('category_name', true);
+            $data['status'] = $this->input->post('status', true);
+            $this->query_model->products_category_update($data);
+            $sdata = array();
+            $sdata['message'] = 'Products category successfully Update';
+            $this->session->set_userdata($sdata);
+            $this->edit_product_category_form($produc_cat_id);
+        }else{
+            $sdata = array();
+            $sdata['message'] = 'Try again';
+            $this->session->set_userdata($sdata);
+            $this->edit_product_category_form($produc_cat_id);
         }
         
 
@@ -173,6 +218,7 @@ class Products extends CI_Controller {
 								$data['product_category_id'] = $this->input->post('product_category_id', true);
 								$data['product_name'] = $this->input->post('product_name', true);
 								$data['details'] = $this->input->post('details', true);
+								$data['details_long'] = $this->input->post('details_long', true);
 								$data['status'] = '1';
 								$data['product_image'] = $img;
 
@@ -288,6 +334,17 @@ class Products extends CI_Controller {
 		$sdata['message'] = 'Product Deleted Successfully!';
 		$this->session->set_userdata($sdata);
 		$this->products_list();
+	}
+    
+	public function delete_status_product_category($product_cat_id){
+		$this->db->set('status', '0');
+        $this->db->set('delete_status', 'deleted');
+        $this->db->where('id', $product_cat_id);
+        $this->db->update('tbl_products_category');
+		$sdata = array();
+		$sdata['message'] = 'Category Deleted Successfully!';
+		$this->session->set_userdata($sdata);
+		$this->products_category();
 	}
 
 

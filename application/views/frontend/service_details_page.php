@@ -19,7 +19,7 @@
 
                     <ul class="products-ul">
                         <?php
-                            $producstMenu = $this->db->query("SELECT * FROM tbl_products_category WHERE service_id = '$serviceListSingle->id' ")->result();
+                            $producstMenu = $this->db->query("SELECT * FROM tbl_products_category WHERE service_id = '$serviceListSingle->id' AND NOT (status <=> '0') ")->result();
                             foreach ($producstMenu as $productCat): 
                         ?>
                             <li><a href="<?php echo base_url().'products/'.$productCat->id;?>"><?php echo $productCat->category_name?></a></li>
@@ -36,6 +36,9 @@
                     <p>
                         <?php echo $serviceListSingle->details?>
                     </p> 
+					<div>
+                        <?php echo $serviceListSingle->details_long;?>
+                    </div>
                     
                     
                 </div>

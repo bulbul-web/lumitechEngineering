@@ -73,6 +73,7 @@ class Welcome extends CI_Controller {
 		$data = array();
 		$cmny_id = 1;
 		$data['companyInfo'] = $this->query_model->company_info_single($cmny_id);
+		$data['catalogueList'] = $this->query_model->catalogue_list();
 		$data['title'] = 'Gallery';
 		$data['header'] = $this->load->view("frontend/header", $data, true);
 		$data['main'] = $this->load->view("frontend/gallery", $data, true);
@@ -163,12 +164,12 @@ class Welcome extends CI_Controller {
 		$this->load->view('indexHome', $data);
 	}
 	
-	public function category_details($category_id)
+	public function category_details($catalogue_id)
 	{
 		$data = array();
 		$cmny_id = 1;
 		$data['companyInfo'] = $this->query_model->company_info_single($cmny_id);
-		// $data['serviceListSingle'] = $this->query_model->service_list_single($service_id);
+		$data['catalogueDetailsSingle'] = $this->query_model->catalogue_details_single($catalogue_id);
 		$data['title'] = 'Service Details';
 		$data['productsMenu'] = $this->load->view("frontend/productsMenu", $data, true);
 		$data['header'] = $this->load->view("frontend/header", $data, true);

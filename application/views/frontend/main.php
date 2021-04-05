@@ -16,7 +16,7 @@
                     <div class="padding-2x">
                     <div class="s-12 m-12 l-8">
                         <p class="text-white text-s-size-20 text-m-size-40 text-l-size-60 margin-bottom-40 text-thin text-line-height-1"><?php echo $slide->title?></p>
-                        <p class="text-white text-size-16 margin-bottom-40"><?php echo $slide->description?></p>  
+                        <p class="text-white text-size-16 margin-bottom-40"><?php echo substr($slide->description, 0, 50)?></p>
                     </div>                  
                     </div>
                 </div>

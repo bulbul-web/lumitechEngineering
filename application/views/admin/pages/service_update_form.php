@@ -66,6 +66,11 @@
                                 <input type="text" name="details" class="form-control" value="<?php echo $serviceListSingle->details; ?>" >
                                 <?php echo form_error('details', '<div class="error">', '</div>'); ?>
                             </div>
+							
+							<div class="form-group">
+                                <label for="email">Long Details:</label>
+                                <textarea name="details_long" class="form-control" required=""><?php echo $serviceListSingle->details_long;?></textarea>
+                            </div>
                             
                             <div class="form-group">
                                 <label for="email">Service Image:</label>
@@ -112,5 +117,9 @@
 
 <script>
     document.forms['service-update'].elements['status'].value=<?php echo $serviceListSingle->status; ?>;//for active inactive.
+</script>
+<script src="https://cdn.ckeditor.com/4.16.0/standard/ckeditor.js"></script>
+<script>
+        CKEDITOR.replace( 'details_long' );
 </script>
    

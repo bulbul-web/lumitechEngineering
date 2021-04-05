@@ -24,6 +24,9 @@
                     <p>
                         <?php echo $projectDetailsSingle->details;?>
                     </p> 
+					<div>
+                        <?php echo $projectDetailsSingle->details_long;?>
+                    </div>
                     
                     
                 </div>
