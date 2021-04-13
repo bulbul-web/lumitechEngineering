@@ -25,7 +25,7 @@
                             if($extntion == 'pdf'):
                         ?>
                             <img class="margin-bottom details-page-img" style="width: 150px" src="<?php echo base_url()?>assets/frontend/img/pdf_icon.png" />
-                        <?php elseif($extntion == 'doc'):?>
+                        <?php elseif($extntion == 'doc' || $extntion == 'docx'):?>
                             <img class="margin-bottom details-page-img" style="width: 150px" src="<?php echo base_url()?>assets/frontend/img/doc_icon.png" />
                         <?php else:?>
                             <img class="margin-bottom details-page-img" src="<?php echo base_url().$catalogueDetailsSingle->catalogue_image;?>" alt="">
