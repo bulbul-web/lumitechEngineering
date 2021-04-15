@@ -52,50 +52,50 @@
 
             <?php $service = $this->db->query("SELECT * FROM tbl_services WHERE  id = '1' ")->row(); ?>
             <div class="s-12 m-12 l-4 margin-m-bottom" style="margin: 15px 0px; min-height: 390px;">
-                <img class="margin-bottom" src="<?php echo base_url().$service->service_image;?>" alt="">
+                <a href="<?php echo base_url().'lumitech-power'?>"><img class="margin-bottom" src="<?php echo base_url().$service->service_image;?>" alt=""></a>
                 <h2 class="text-thin"><?php echo $service->title;?></h2>
                 <p><?php echo substr($service->details, 0, 50);?>...</p> 
-                <a class="text-more-info text-primary-hover" href="<?php echo base_url().'lumitech-power'?>">Read more</a>                
+                <a class="text-more-info text-primary-hover" style="font-weight: bold;" href="<?php echo base_url().'lumitech-power'?>">Details</a>                
             </div>
 
             <?php $service = $this->db->query("SELECT * FROM tbl_services WHERE  id = '2' ")->row(); ?>
             <div class="s-12 m-12 l-4 margin-m-bottom" style="margin: 15px 0px; min-height: 390px;">
-                <img class="margin-bottom" src="<?php echo base_url().$service->service_image;?>" alt="">
+                <a href="<?php echo base_url().'lumitech-professional-lighting'?>"><img class="margin-bottom" src="<?php echo base_url().$service->service_image;?>" alt=""></a>
                 <h2 class="text-thin"><?php echo $service->title;?></h2>
                 <p><?php echo substr($service->details, 0, 50);?>...</p> 
-                <a class="text-more-info text-primary-hover" href="<?php echo base_url().'lumitech-professional-lighting'?>">Read more</a>                
+                <a class="text-more-info text-primary-hover" style="font-weight: bold;" href="<?php echo base_url().'lumitech-professional-lighting'?>">Details</a>                
             </div>
             
             <?php $service = $this->db->query("SELECT * FROM tbl_services WHERE  id = '3' ")->row(); ?>
             <div class="s-12 m-12 l-4 margin-m-bottom" style="margin: 15px 0px; min-height: 390px;">
-                <img class="margin-bottom" src="<?php echo base_url().$service->service_image;?>" alt="">
+                <a href="<?php echo base_url().'lumitech-chemicals-and-dyes'?>"><img class="margin-bottom" src="<?php echo base_url().$service->service_image;?>" alt=""></a>
                 <h2 class="text-thin"><?php echo $service->title;?></h2>
                 <p><?php echo substr($service->details, 0, 50);?>...</p> 
-                <a class="text-more-info text-primary-hover" href="<?php echo base_url().'lumitech-chemicals-and-dyes'?>">Read more</a>                
+                <a class="text-more-info text-primary-hover" style="font-weight: bold;" href="<?php echo base_url().'lumitech-chemicals-and-dyes'?>">Details</a>                
             </div>
             
             <?php $service = $this->db->query("SELECT * FROM tbl_services WHERE  id = '4' ")->row(); ?>
             <div class="s-12 m-12 l-4 margin-m-bottom" style="margin: 15px 0px; min-height: 390px;">
-                <img class="margin-bottom" src="<?php echo base_url().$service->service_image;?>" alt="">
+                <a href="<?php echo base_url().'lumitech-construction'?>"><img class="margin-bottom" src="<?php echo base_url().$service->service_image;?>" alt=""></a>
                 <h2 class="text-thin"><?php echo $service->title;?></h2>
                 <p><?php echo substr($service->details, 0, 50);?>...</p> 
-                <a class="text-more-info text-primary-hover" href="<?php echo base_url().'lumitech-construction'?>">Read more</a>                
+                <a class="text-more-info text-primary-hover" style="font-weight: bold;" href="<?php echo base_url().'lumitech-construction'?>">Details</a>                
             </div>
             
             <?php $service = $this->db->query("SELECT * FROM tbl_services WHERE  id = '5' ")->row(); ?>
             <div class="s-12 m-12 l-4 margin-m-bottom" style="margin: 15px 0px; min-height: 390px;">
-                <img class="margin-bottom" src="<?php echo base_url().$service->service_image;?>" alt="">
+                <a href="<?php echo base_url().'lumitech-organic'?>"><img class="margin-bottom" src="<?php echo base_url().$service->service_image;?>" alt=""></a>
                 <h2 class="text-thin"><?php echo $service->title;?></h2>
                 <p><?php echo substr($service->details, 0, 50);?>...</p> 
-                <a class="text-more-info text-primary-hover" href="<?php echo base_url().'lumitech-organic'?>">Read more</a>                
+                <a class="text-more-info text-primary-hover" style="font-weight: bold;" href="<?php echo base_url().'lumitech-organic'?>">Details</a>                
             </div>
             
             <?php $service = $this->db->query("SELECT * FROM tbl_services WHERE  id = '6' ")->row(); ?>
             <div class="s-12 m-12 l-4 margin-m-bottom" style="margin: 15px 0px; min-height: 390px;">
-                <img class="margin-bottom" src="<?php echo base_url().$service->service_image;?>" alt="">
+                <a href="<?php echo base_url().'lumitech-denim-fabric-and-garments'?>"><img class="margin-bottom" src="<?php echo base_url().$service->service_image;?>" alt=""></a>
                 <h2 class="text-thin"><?php echo $service->title;?></h2>
                 <p><?php echo substr($service->details, 0, 50);?>...</p> 
-                <a class="text-more-info text-primary-hover" href="<?php echo base_url().'lumitech-denim-fabric-and-garments'?>">Read more</a>                
+                <a class="text-more-info text-primary-hover" style="font-weight: bold;" href="<?php echo base_url().'lumitech-denim-fabric-and-garments'?>">Details</a>                
             </div>
         
         
