@@ -38,16 +38,22 @@
 
                     <!-- <li><a>Service 1</a>
                         <ul>
-                            <li><a>Service 1 A</a></li>
-                            <li><a>Service 1 B</a></li>
+                            <li><a href="<?php echo base_url();?>gallery">Service 1 A</a></li>
+                            <li><a href="<?php echo base_url();?>contact">Service 1 A</a></li>
                         </ul>
                     </li> -->
-                    <?php 
+                    <!-- <?php 
                         $service_result = $this->db->query("SELECT * FROM tbl_services WHERE status = 1 ORDER BY id ASC")->result();
                         foreach($service_result as $service):
                     ?>
                         <li><a href="<?php echo base_url().'service-details-page/'.$service->id;?>"><?php echo $service->title;?></a></li>
-                    <?php endforeach;?>
+                    <?php endforeach;?> -->
+                        <li><a href="<?php echo base_url();?>lumitech-chemicals-and-dyes">Lumitech Chemicals and Dyes</a></li>
+                        <li><a href="<?php echo base_url();?>lumitech-professional-lighting">Lumitech Professional Lighting</a></li>
+                        <li><a href="<?php echo base_url();?>lumitech-power">Lumitech Power</a></li>
+                        <li><a href="<?php echo base_url();?>lumitech-construction">Lumitech Construction</a></li>
+                        <li><a href="<?php echo base_url();?>lumitech-organic">Lumitech Organic</a></li>
+                        <li><a href="<?php echo base_url();?>lumitech-denim-fabric-and-garments">Lumitech Denim fabric and Garments</a></li>
                 </ul>
             </li>
             <li><a href="<?php base_url();?>gallery">Catalogue</a></li>

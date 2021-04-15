@@ -45,24 +45,29 @@
             <!-- Contact Form -->
             <div class="s-12 m-12 l-6">
             <h2 class="text-uppercase text-strong margin-bottom-30">Contact Us</h2>
-            <form class="customform">
+            <form name="msge-send" id="msgeSend" action="<?php echo base_url();?>msge-send" method="post" enctype="multipart/form-data" class="customform text-white">
                 <div class="line">
-                <div class="margin">
+                    <div class="margin">
+                    
+                    <div class="s-12 m-12 l-12">
+                        <input name="company_name" class="required border-radius" placeholder="Your company Name" title="Your company Name" type="text" required="" />
+                    </div>
+
                     <div class="s-12 m-12 l-6">
-                    <input name="email" class="required email border-radius" placeholder="Your e-mail" title="Your e-mail" type="text" />
+                        <input name="email" class="required email border-radius" placeholder="Your e-mail" title="Your e-mail" type="text" />
                     </div>
                     <div class="s-12 m-12 l-6">
-                    <input name="name" class="name border-radius" placeholder="Your name" title="Your name" type="text" />
+                        <input name="name" class="required name border-radius" placeholder="Your name" title="Your name" type="text" />
                     </div>
-                </div>
-                </div>
-                <div class="s-12"> 
-                <input name="subject" class="subject border-radius" placeholder="Subject" title="Subject" type="text" />
+                    <div class="s-12 m-12 l-12">
+                        <input name="phone" class="required border-radius" placeholder="Your Phone Number" title="Your Phone Number" type="text" required="" />
+                    </div>
+                    </div>
                 </div>
                 <div class="s-12">
-                <textarea name="message" class="required message border-radius" placeholder="Your message" rows="3"></textarea>
+                    <textarea name="message" class="required message border-radius" placeholder="Your message" rows="3"></textarea>
                 </div>
-                <div class="s-12 m-12 l-4"><button class="submit-form button background-primary border-radius text-white" type="submit">Submit Button</button></div> 
+                <div class="s-12"><button class="submit-form button background-primary border-radius text-white" type="submit">Send a massege</button></div> 
             </form>
             </div>  
         </div>  

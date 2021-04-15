@@ -81,6 +81,84 @@ class Welcome extends CI_Controller {
 		$this->load->view('indexHome', $data);
 	}
 	
+	public function lumitech_chemicals_and_dyes()
+	{
+		$data = array();
+		$cmny_id = 1;
+		$data['companyInfo'] = $this->query_model->company_info_single($cmny_id);
+		$data['catalogueList'] = $this->query_model->catalogue_list();
+		$data['title'] = 'lumitech chemicals and dyes';
+		$data['header'] = $this->load->view("frontend/header", $data, true);
+		$data['main'] = $this->load->view("frontend/lumitech_chemicals_and_dyes", $data, true);
+		$data['footer'] = $this->load->view("frontend/footer", $data, true);
+		$this->load->view('indexHome', $data);
+	}
+	
+	public function lumitech_professional_lighting()
+	{
+		$data = array();
+		$cmny_id = 1;
+		$data['companyInfo'] = $this->query_model->company_info_single($cmny_id);
+		$data['catalogueList'] = $this->query_model->catalogue_list();
+		$data['title'] = 'lumitech professional lighting';
+		$data['header'] = $this->load->view("frontend/header", $data, true);
+		$data['main'] = $this->load->view("frontend/lumitech_professional_lighting", $data, true);
+		$data['footer'] = $this->load->view("frontend/footer", $data, true);
+		$this->load->view('indexHome', $data);
+	}
+	
+	public function lumitech_power()
+	{
+		$data = array();
+		$cmny_id = 1;
+		$data['companyInfo'] = $this->query_model->company_info_single($cmny_id);
+		$data['catalogueList'] = $this->query_model->catalogue_list();
+		$data['title'] = 'lumitech power';
+		$data['header'] = $this->load->view("frontend/header", $data, true);
+		$data['main'] = $this->load->view("frontend/lumitech_power", $data, true);
+		$data['footer'] = $this->load->view("frontend/footer", $data, true);
+		$this->load->view('indexHome', $data);
+	}
+	
+	public function lumitech_construction()
+	{
+		$data = array();
+		$cmny_id = 1;
+		$data['companyInfo'] = $this->query_model->company_info_single($cmny_id);
+		$data['catalogueList'] = $this->query_model->catalogue_list();
+		$data['title'] = 'lumitech construction';
+		$data['header'] = $this->load->view("frontend/header", $data, true);
+		$data['main'] = $this->load->view("frontend/lumitech_construction", $data, true);
+		$data['footer'] = $this->load->view("frontend/footer", $data, true);
+		$this->load->view('indexHome', $data);
+	}
+	
+	public function lumitech_organic()
+	{
+		$data = array();
+		$cmny_id = 1;
+		$data['companyInfo'] = $this->query_model->company_info_single($cmny_id);
+		$data['catalogueList'] = $this->query_model->catalogue_list();
+		$data['title'] = 'lumitech organic';
+		$data['header'] = $this->load->view("frontend/header", $data, true);
+		$data['main'] = $this->load->view("frontend/lumitech_organic", $data, true);
+		$data['footer'] = $this->load->view("frontend/footer", $data, true);
+		$this->load->view('indexHome', $data);
+	}
+	
+	public function lumitech_denim_fabric_and_garments()
+	{
+		$data = array();
+		$cmny_id = 1;
+		$data['companyInfo'] = $this->query_model->company_info_single($cmny_id);
+		$data['catalogueList'] = $this->query_model->catalogue_list();
+		$data['title'] = 'lumitech denim fabric and garments';
+		$data['header'] = $this->load->view("frontend/header", $data, true);
+		$data['main'] = $this->load->view("frontend/lumitech_denim_fabric_and_garments", $data, true);
+		$data['footer'] = $this->load->view("frontend/footer", $data, true);
+		$this->load->view('indexHome', $data);
+	}
+	
 	public function contact()
 	{
 		$data = array();

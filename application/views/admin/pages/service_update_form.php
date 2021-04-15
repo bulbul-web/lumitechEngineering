@@ -52,11 +52,12 @@
                                 <input type="hidden" name="id" class="form-control" value="<?php echo $serviceListSingle->id; ?>" >
                                 <!-- <?php echo form_error('title', '<div class="error">', '</div>'); ?> -->
                                 <select name="title" class="form-control" disabled="">
-                                    <option value="Renewable energy" <?php if($serviceListSingle->title == "Renewable energy"): ?>selected<?php endif;?>>Renewable energy</option>
-                                    <option value="LED Lights" <?php if($serviceListSingle->title == "LED Lights"): ?>selected<?php endif;?>>LED Lights</option>
-                                    <option value="Chemical and dyes" <?php if($serviceListSingle->title == "Chemical and dyes"): ?>selected<?php endif;?>>Chemical and dyes</option>
-                                    <option value="Constraction" <?php if($serviceListSingle->title == "Constraction"): ?>selected<?php endif;?>>Constraction</option>
-                                    <option value="AGRO (Organic firming)" <?php if($serviceListSingle->title == "AGRO (Organic firming)"): ?>selected<?php endif;?>>AGRO (Organic firming)</option>
+                                    <option value="Lumitech Power" <?php if($serviceListSingle->title == "Lumitech Power"): ?>selected<?php endif;?>>Lumitech Power</option>
+                                    <option value="Lumitech Professional Lighting" <?php if($serviceListSingle->title == "Lumitech Professional Lighting"): ?>selected<?php endif;?>>Lumitech Professional Lighting</option>
+                                    <option value="Lumitech Chemicals and Dyes" <?php if($serviceListSingle->title == "Lumitech Chemicals and Dyes"): ?>selected<?php endif;?>>Lumitech Chemicals and Dyes</option>
+                                    <option value="Lumitech Construction" <?php if($serviceListSingle->title == "Lumitech Construction"): ?>selected<?php endif;?>>Lumitech Construction</option>
+                                    <option value="Lumitech Organic" <?php if($serviceListSingle->title == "Lumitech Organic"): ?>selected<?php endif;?>>Lumitech Organic</option>
+                                    <option value="Lumitech Denim fabric and Garments" <?php if($serviceListSingle->title == "Lumitech Denim fabric and Garments"): ?>selected<?php endif;?>>Lumitech Denim fabric and Garments</option>
                                 </select>
                                 <?php echo form_error('title', '<div class="error">', '</div>'); ?>
                             </div>

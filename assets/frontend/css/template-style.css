@@ -2018,3 +2018,9 @@ ul.products-ul li:hover{
   margin: 0 auto;
   padding: 5px;
 }
+
+.pages-title{
+  margin: 5px;
+  background: #b8e6b9;
+  padding: 5px;
+}
