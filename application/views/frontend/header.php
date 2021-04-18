@@ -32,8 +32,15 @@
         <ul class="right chevron">
             <li><a href="<?php echo base_url();?>">Home</a></li>
             <!-- <li><a href="<?php base_url();?>products">Products</a></li> -->
-            <li><a href="<?php base_url();?>about">About</a></li>
-            <li><a>Products</a>
+            <li><a>About Lumitech</a>
+                <ul>
+                    <li><a href="<?php echo base_url();?>introduction">Introduction</a></li>
+                    <li><a href="<?php base_url();?>about">Mission, Vission & Core Value</a></li>
+                    <li><a href="<?php base_url();?>key-milestone">Key Milestone</a></li>
+                    <li><a href="<?php base_url();?>bod">BOD</a></li>
+                </ul>
+            </li>
+            <li><a>Products & Service</a>
                 <ul>
 
                     <!-- <li><a>Service 1</a>
@@ -42,12 +49,14 @@
                             <li><a href="<?php echo base_url();?>contact">Service 1 A</a></li>
                         </ul>
                     </li> -->
+
                     <!-- <?php 
-                        $service_result = $this->db->query("SELECT * FROM tbl_services WHERE status = 1 ORDER BY id ASC")->result();
-                        foreach($service_result as $service):
+                        //$service_result = $this->db->query("SELECT * FROM tbl_services WHERE status = 1 ORDER BY id ASC")->result();
+                        //foreach($service_result as $service):
                     ?>
                         <li><a href="<?php echo base_url().'service-details-page/'.$service->id;?>"><?php echo $service->title;?></a></li>
-                    <?php endforeach;?> -->
+                    <?php //endforeach;?> -->
+
                         <li><a href="<?php echo base_url();?>lumitech-chemicals-and-dyes">Lumitech Chemicals and Dyes</a></li>
                         <li><a href="<?php echo base_url();?>lumitech-professional-lighting">Lumitech Professional Lighting</a></li>
                         <li><a href="<?php echo base_url();?>lumitech-power">Lumitech Power</a></li>
@@ -56,8 +65,14 @@
                         <li><a href="<?php echo base_url();?>lumitech-denim-fabric-and-garments">Lumitech Denim fabric and Garments</a></li>
                 </ul>
             </li>
-            <li><a href="<?php base_url();?>gallery">Catalogue</a></li>
+            <li><a href="<?php base_url();?>download">Download</a></li>
             <li><a href="<?php base_url();?>contact">Contact</a></li>
+            <li><a>Carrier</a>
+                <ul>
+                    <li><a href="<?php base_url();?>working-invironment">Working Invironment</a></l>
+                    <li><a href="<?php base_url();?>job-vacancy">Job Vacancy</a></l>
+                </ul>
+            </li>
         </ul>
         </div>
     </div>

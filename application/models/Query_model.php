@@ -39,6 +39,11 @@ class Query_model extends CI_Model {
         return $result;
     }
     
+    public function bod_list(){
+        $result = $this->db->query("SELECT * FROM tbl_bod WHERE NOT (delete_status <=> 'deleted')  ORDER BY id DESC")->result();
+        return $result;
+    }
+    
     public function all_products($product_cat_id){
         $result = $this->db->query("SELECT * FROM tbl_products WHERE NOT (delete_status <=> 'deleted') AND product_category_id = '$product_cat_id'  ORDER BY id DESC")->result();
         return $result;
@@ -99,6 +104,10 @@ class Query_model extends CI_Model {
         $this->db->insert('tbl_client', $data);
     }
     
+    public function bod_save($data){
+        $this->db->insert('tbl_bod', $data);
+    }
+    
     public function msge_send($data){
         $this->db->insert('tbl_msg', $data);
     }
@@ -152,6 +161,11 @@ class Query_model extends CI_Model {
     
     public function client_details_single($client_id){
         $result = $this->db->query("SELECT * FROM tbl_client Where id = '$client_id' ")->row();
+        return $result;
+    }
+    
+    public function bod_details_single($bod_id){
+        $result = $this->db->query("SELECT * FROM tbl_bod Where id = '$bod_id' ")->row();
         return $result;
     }
 
@@ -264,6 +278,24 @@ class Query_model extends CI_Model {
 
         $this->db->where('id', $id);
         $this->db->update('tbl_client', $data);
+    }
+    
+    public function update_bod($img){
+        $data = array();
+        $id = $this->input->post('id', TRUE);
+        $data['name'] = $this->input->post('name', true);
+        $data['details'] = $this->input->post('details', true);
+        $data['designation'] = $this->input->post('designation', true);
+        $data['phone'] = $this->input->post('phone', true);
+        $data['email'] = $this->input->post('email', true);
+        $data['status'] = $this->input->post('status', true);
+        $data['bod_image'] = $img;
+
+        // print_r($data);
+        // exit();
+
+        $this->db->where('id', $id);
+        $this->db->update('tbl_bod', $data);
     }
 
     public function update_company($img){

@@ -68,15 +68,88 @@ class Welcome extends CI_Controller {
 		$this->load->view('indexHome', $data);
 	}
 	
-	public function gallery()
+	public function introduction()
+	{
+		$data = array();
+		$cmny_id = 1;
+		$data['companyInfo'] = $this->query_model->company_info_single($cmny_id);
+		$data['title'] = 'Introduction';
+		$data['header'] = $this->load->view("frontend/header", $data, true);
+		$data['main'] = $this->load->view("frontend/introduction", $data, true);
+		$data['footer'] = $this->load->view("frontend/footer", $data, true);
+		$this->load->view('indexHome', $data);
+	}
+	
+	public function key_milestone()
+	{
+		$data = array();
+		$cmny_id = 1;
+		$data['companyInfo'] = $this->query_model->company_info_single($cmny_id);
+		$data['title'] = 'Key Milestone';
+		$data['header'] = $this->load->view("frontend/header", $data, true);
+		$data['main'] = $this->load->view("frontend/key_milestone", $data, true);
+		$data['footer'] = $this->load->view("frontend/footer", $data, true);
+		$this->load->view('indexHome', $data);
+	}
+	
+	public function bod()
+	{
+		$data = array();
+		$cmny_id = 1;
+		$data['companyInfo'] = $this->query_model->company_info_single($cmny_id);
+		$data['title'] = 'BOD';
+		$data['header'] = $this->load->view("frontend/header", $data, true);
+		$data['main'] = $this->load->view("frontend/bod", $data, true);
+		$data['footer'] = $this->load->view("frontend/footer", $data, true);
+		$this->load->view('indexHome', $data);
+	}
+	
+	public function bod_details($bod_id)
+	{
+		$data = array();
+		$cmny_id = 1;
+		$data['companyInfo'] = $this->query_model->company_info_single($cmny_id);
+		$data['bodDetailsSingle'] = $this->query_model->bod_details_single($bod_id);
+		$data['title'] = 'BOD Details';
+		$data['header'] = $this->load->view("frontend/header", $data, true);
+		$data['main'] = $this->load->view("frontend/bod_details", $data, true);
+		$data['footer'] = $this->load->view("frontend/footer", $data, true);
+		$this->load->view('indexHome', $data);
+	}
+	
+	public function working_invironment()
+	{
+		$data = array();
+		$cmny_id = 1;
+		$data['companyInfo'] = $this->query_model->company_info_single($cmny_id);
+		$data['title'] = 'Working Invironment';
+		$data['header'] = $this->load->view("frontend/header", $data, true);
+		$data['main'] = $this->load->view("frontend/working_invironment", $data, true);
+		$data['footer'] = $this->load->view("frontend/footer", $data, true);
+		$this->load->view('indexHome', $data);
+	}
+	
+	public function job_vacancy()
+	{
+		$data = array();
+		$cmny_id = 1;
+		$data['companyInfo'] = $this->query_model->company_info_single($cmny_id);
+		$data['title'] = 'Job Vacancy';
+		$data['header'] = $this->load->view("frontend/header", $data, true);
+		$data['main'] = $this->load->view("frontend/job_vacancy", $data, true);
+		$data['footer'] = $this->load->view("frontend/footer", $data, true);
+		$this->load->view('indexHome', $data);
+	}
+	
+	public function download()
 	{
 		$data = array();
 		$cmny_id = 1;
 		$data['companyInfo'] = $this->query_model->company_info_single($cmny_id);
 		$data['catalogueList'] = $this->query_model->catalogue_list();
-		$data['title'] = 'Gallery';
+		$data['title'] = 'Download';
 		$data['header'] = $this->load->view("frontend/header", $data, true);
-		$data['main'] = $this->load->view("frontend/gallery", $data, true);
+		$data['main'] = $this->load->view("frontend/download", $data, true);
 		$data['footer'] = $this->load->view("frontend/footer", $data, true);
 		$this->load->view('indexHome', $data);
 	}
@@ -155,6 +228,32 @@ class Welcome extends CI_Controller {
 		$data['title'] = 'lumitech denim fabric and garments';
 		$data['header'] = $this->load->view("frontend/header", $data, true);
 		$data['main'] = $this->load->view("frontend/lumitech_denim_fabric_and_garments", $data, true);
+		$data['footer'] = $this->load->view("frontend/footer", $data, true);
+		$this->load->view('indexHome', $data);
+	}
+	
+	public function denim_febrics()
+	{
+		$data = array();
+		$cmny_id = 1;
+		$data['companyInfo'] = $this->query_model->company_info_single($cmny_id);
+		$data['catalogueList'] = $this->query_model->catalogue_list();
+		$data['title'] = 'Denim Febrics';
+		$data['header'] = $this->load->view("frontend/header", $data, true);
+		$data['main'] = $this->load->view("frontend/denim_febrics", $data, true);
+		$data['footer'] = $this->load->view("frontend/footer", $data, true);
+		$this->load->view('indexHome', $data);
+	}
+	
+	public function ready_germents()
+	{
+		$data = array();
+		$cmny_id = 1;
+		$data['companyInfo'] = $this->query_model->company_info_single($cmny_id);
+		$data['catalogueList'] = $this->query_model->catalogue_list();
+		$data['title'] = 'Ready Germents';
+		$data['header'] = $this->load->view("frontend/header", $data, true);
+		$data['main'] = $this->load->view("frontend/ready_germents", $data, true);
 		$data['footer'] = $this->load->view("frontend/footer", $data, true);
 		$this->load->view('indexHome', $data);
 	}

@@ -59,6 +59,12 @@
           <i class="fa fa-circle-o"></i> <span>Catalogue</span> 
         </a>
       </li>
+
+      <li>
+        <a href="<?php echo base_url();?>bod" class="waves-effect">
+          <i class="fa fa-circle-o"></i> <span>BOD</span> 
+        </a>
+      </li>
       
     </ul>
 	 

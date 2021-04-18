@@ -2024,3 +2024,45 @@ ul.products-ul li:hover{
   background: #b8e6b9;
   padding: 5px;
 }
+
+.denim-garments-section{
+  padding:5px; margin: 5px; border:1px solid green;
+}
+.denim-garments-section h3{
+  margin: 5px;
+  background: #b8e6b9;
+  padding: 5px;
+  text-align: center;
+}
+.denim-garments-section img{
+  padding:5px; margin: 5px;
+}
+.denim-garments-section a img{
+  transition: 1s;
+  height: 350px;
+}
+.denim-garments-section a:hover img{
+  opacity: 0.5;
+  transition: 1s;
+}
+
+.bod-section{
+  padding:5px; margin: 5px; border:1px solid green;
+}
+.bod-section h6{
+  margin: 5px;
+  background: #b8e6b9;
+  padding: 5px;
+  text-align: center;
+}
+.bod-section img{
+  padding:5px; margin: 5px;
+}
+.bod-section a img{
+  transition: 1s;
+  max-width: 220px;
+}
+.bod-section a:hover img{
+  opacity: 0.5;
+  transition: 1s;
+}
