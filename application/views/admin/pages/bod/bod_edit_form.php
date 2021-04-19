@@ -82,7 +82,7 @@
                                 <input type="file" name="bod_image" class="form-control" value="" >
                                 <input type="hidden" name="old_bod_image" class="form-control" value="<?php echo $bodDetailsSingle->bod_image;?>" >
                                 <?php echo form_error('bod_image', '<div class="error">', '</div>'); ?>
-                                <span class="alert alert-danger text-center">Image size will be (500 x 333)</span><br/>
+                                <span class="alert alert-danger text-center">Image size will be rounded</span><br/>
                                 <img src="<?php echo base_url().$bodDetailsSingle->bod_image;?>" style="height: 50px;" />
                             </div>
                             
