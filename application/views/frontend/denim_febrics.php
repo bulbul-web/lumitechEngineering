@@ -23,18 +23,18 @@
             </div>
 
             <div class="s-12 m-10 l-10 margin-m-bottom-30">
-                <h3>-</h3>
+                <h3>Lumitech Engineering Ltd. has started Denim Fabric and Padimate Garment business in this year.</h3>
                 <hr>
                 <div class="line">
                     
-                    <div class="s-6 m-6 l-6 margin-m-bottom-30">
+                    <div class="s-12 m-12 l-12 margin-m-bottom-30">
                         <h3 class="pages-title">Denim Febrics</h3> 
                         <br>
                         
                     </div>
                     
-                    <div class="s-6 m-6 l-6 margin-m-bottom-30">
-                        <img src="<?php echo base_url();?>assets/frontend/img/pages_img/denim-fabric-and-garments.jpg"/>
+                    <div class="s-12 m-12 l-12 margin-m-bottom-30">
+                        <img src="<?php echo base_url();?>assets/frontend/img/pages_img/denim-fabrics_1.jpg"/>
                     </div>
 
                 </div>

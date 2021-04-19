@@ -61,7 +61,7 @@
       </li>
 
       <li>
-        <a href="<?php echo base_url();?>bod" class="waves-effect">
+        <a href="<?php echo base_url();?>bod-list" class="waves-effect">
           <i class="fa fa-circle-o"></i> <span>BOD</span> 
         </a>
       </li>
