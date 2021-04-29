@@ -24,7 +24,7 @@
 
             <div class="s-12 m-10 l-10 margin-m-bottom-30">
                 
-                <h3>In 2015 , 2B Tex Corporation, mother company of Lumitech Engineering Ltd. has successfully started Industrial Chemicals and Dyes business targeting huge potential market in Textile and Garments sectors. At present monthly average turnover is around TK. 50 Lac. </h3>
+                <h3>In 2015 , 2B Tex Corporation, mother company of Lumitech Engineering Ltd. has successfully started Industrial Chemicals and Dyes business targeting huge potential market in Textile and Garments sectors. At present monthly average turnover is around TK. 50 Million. </h3>
                 <hr>
                 <div class="line">
 
@@ -40,7 +40,7 @@
                             <li>Colsul Brown ECO</li>
                             <li>Colsul Bordeaux ECO</li>
                         </ol> 
-                        <h4>2. Dispense Dyes</h4>
+                        <h4>2. Disperse Dyes</h4>
                         <h4>3. Indigo Dyes</h4>
                         <h4>4. Pigment Dyes</h4>
                     </div>
@@ -83,9 +83,9 @@
                             <li>Noga Biochem (China)</li>
                             <li>Totas International Trading Company Limited (Taiwan)</li>
                             <li>Cargill (Turkey)</li>
-                            <li>Fixing Agent</li>
+                            <!-- <li>Fixing Agent</li>
                             <li>Levelling Agent</li>
-                            <li>Sequestering</li>
+                            <li>Sequestering</li> -->
                         </ul>
                     </div>
                     

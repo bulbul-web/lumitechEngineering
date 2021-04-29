@@ -3,7 +3,7 @@
     <!-- Content -->
     <article>
     <header class="section background-primary text-center">
-        <p class="text-white margin-bottom-0 text-size-50 text-thin text-line-height-1" style="display: inline-flex;"><img src="<?php echo base_url();?>assets/frontend/img/icon/Lumitech_constraction.jpg" style="height: 50px;"/>Lumitech Contruction</p>
+        <p class="text-white margin-bottom-0 text-size-50 text-thin text-line-height-1" style="display: inline-flex;"><img src="<?php echo base_url();?>assets/frontend/img/icon/Lumitech_constraction.jpg" style="height: 50px;"/>Lumitech Construction</p>
     </header>
     <div class="section background-white"> 
         <div class="line">

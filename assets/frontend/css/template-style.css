@@ -2066,3 +2066,25 @@ ul.products-ul li:hover{
   opacity: 0.5;
   transition: 1s;
 }
+
+.productarea{
+    background: #b8e6b9;
+    padding: 15px;
+    display: inline-flex;
+    align-items: center;
+    border-bottom: 2px solid green;
+    border-radius: 3px;
+    box-shadow: 2px 2px 4px 0px;
+    margin-bottom: 20px;
+    height: 105px;
+    width: 95%;
+}
+
+.productarea img{
+    width: 50px;
+    margin-right: 15px;
+}
+.productarea h4{
+  font-weight: bold;
+  color: green;
+}

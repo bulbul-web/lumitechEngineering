@@ -56,6 +56,7 @@
                 </div>
                 <div class="s-11 m-11 l-11 margin-bottom-10">
                   <p><b>Phone:</b> <?php echo $companyInfo->mobile_1;?></p>
+                  <p><b>Phone:</b> <?php echo $companyInfo->mobile_3;?></p>
                 </div>
               </div>
               <div class="line">
